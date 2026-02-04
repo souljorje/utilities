@@ -37,8 +37,11 @@
     "@types/bun": "^1.3.8",
     "eslint": "^9.39.2",
     "husky": "^9.1.7",
+    "remark-insert-headings": "^0.0.0",
+    "remark-toc": "^9.0.0",
     "typedoc": "^0.28.16",
     "typedoc-plugin-markdown": "^4.9.0",
+    "typedoc-plugin-remark": "^2.0.1",
     "typescript": "^5.9.3"
   }
 }

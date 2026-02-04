@@ -1,13 +1,31 @@
 {
   "$schema": "https://typedoc-plugin-markdown.org/schema.json",
-  "plugin": ["typedoc-plugin-markdown"],
-  "includeVersion": true,
+  "plugin": ["typedoc-plugin-markdown", "typedoc-plugin-remark"],
+  "out": "docs",
   "entryPoints": ["src"],
   "entryPointStrategy": "expand",
-  "exclude": ["src/index.ts"],
-  "out": "docs",
   "entryFileName": "index",
+  "exclude": ["src/index.ts"],
+  "includeVersion": true,
   "flattenOutputFiles": false,
   "readme": "none",
-  "groupOrder": ["Functions", "Variables", "*"]
+  "groupOrder": ["Functions", "Variables", "*"],
+  "router": "module",
+  "cleanOutputDir": true,
+  "hidePageHeader": true,
+  "remarkPlugins": [
+    {
+      "applyTo": ["Module"],
+      "plugins": [
+        ["remark-insert-headings", { "text": "Table of contents" }],
+        [
+          "remark-toc",
+          {
+            "heading": "Table of contents",
+            "maxDepth": 3
+          }
+        ]
+      ]
+    }
+  ]
 }

@@ -44,7 +44,11 @@ export const ensureArray = <T>(value: T | T[]): T[] => (Array.isArray(value) ? v
  * mapKeysToValues(['a', 'b'], [[1, 2]]) // [{ a: 1, b: 2 }]
  * mapKeysToValues(['a'], [[1], [2]]) // [{ a: 1 }, { a: 2 }]
  */
-export function mapKeysToValues<K extends string, V, R = V>(keys: K[], values: V[][], getValue: (key: K, value: V) => R = (_key, value) => value as unknown as R): Array<Record<K, R>> {
+export function mapKeysToValues<K extends string, V, R = V>(
+  keys: K[],
+  values: V[][],
+  getValue: (key: K, value: V) => R = (_key, value) => value as unknown as R,
+): Array<Record<K, R>> {
   return values.map((item) => (
     keys.reduce((acc, key, index) => {
       acc[key] = getValue(key, item[index])
@@ -60,7 +64,11 @@ export function mapKeysToValues<K extends string, V, R = V>(keys: K[], values: V
  * findByPropertyValue({ x: { id: 1 } }, 'id', 1) // { id: 1 }
  * findByPropertyValue({ x: { id: 1 } }, 'id', 2) // undefined
  */
-export function findByPropertyValue<T extends Record<string, any>, K extends keyof T>(obj: Record<string, T>, key: K, value: T[K]): T | undefined {
+export function findByPropertyValue<T extends Record<string, any>, K extends keyof T>(
+  obj: Record<string, T>,
+  key: K,
+  value: T[K],
+): T | undefined {
   return Object.values(obj).find((item) => item[key] === value)
 }
 
@@ -71,7 +79,11 @@ export function findByPropertyValue<T extends Record<string, any>, K extends key
  * arrayAddConditionally(true, 1) // [1]
  * arrayAddConditionally(false, 1, 2) // [2]
  */
-export function arrayAddConditionally<T, F = never>(condition: boolean, value: T | T[], fallbackValue: F | F[] = [] as unknown as F[]): Array<T | F> {
+export function arrayAddConditionally<T, F = never>(
+  condition: boolean,
+  value: T | T[],
+  fallbackValue: F | F[] = [] as unknown as F[],
+): Array<T | F> {
   return condition ? ensureArray(value) : ensureArray(fallbackValue)
 }
 
@@ -82,7 +94,9 @@ export function arrayAddConditionally<T, F = never>(condition: boolean, value: T
  * arrayCreateConditionally([true, 'a'], [false, 'b'], 'c') // ['a', 'c']
  * arrayCreateConditionally([true, 1, 2], [true, 3]) // [1, 2, 3]
  */
-export function arrayCreateConditionally<T>(...map: Array<T | [boolean, ...T[]]>): T[] {
+export function arrayCreateConditionally<T>(
+  ...map: Array<T | [boolean, ...T[]]>
+): T[] {
   return map.reduce<T[]>((newArray, item) => {
     if (!Array.isArray(item)) {
       newArray.push(item)
@@ -134,7 +148,10 @@ export const uniq = <T>(items: T[]): T[] => [...new Set(items)]
  * uniqBy([{ id: 1 }, { id: 1 }], (x) => x.id) // [{ id: 1 }]
  * uniqBy([{ n: 'a' }, { n: 'b' }], (x) => x.n) // [{ n: 'a' }, { n: 'b' }]
  */
-export function uniqBy<T, K>(arr: T[], selector: (item: T) => K = (item) => item as unknown as K): T[] {
+export function uniqBy<T, K>(
+  arr: T[],
+  selector: (item: T) => K = (item) => item as unknown as K,
+): T[] {
   const map = new Map<K, T>()
   arr.forEach((item) => {
     const prop = selector(item)
@@ -167,7 +184,10 @@ export function mergeObjects<T extends Record<string, any>>(source: T, updates: 
  * mapObjectValues({ a: 1 }, (_k, v) => v + 1) // { a: 2 }
  * mapObjectValues({ a: 1, b: 2 }, (_k, v) => v * 2) // { a: 2, b: 4 }
  */
-export function mapObjectValues<T extends Record<string, any>, R>(obj: T, callback: (key: string, value: T[keyof T], obj: T) => R): Record<string, R> {
+export function mapObjectValues<T extends Record<string, any>, R>(
+  obj: T,
+  callback: (key: string, value: T[keyof T], obj: T) => R,
+): Record<string, R> {
   return Object.entries(obj).reduce((acc, [key, value]) => {
     acc[key] = callback(key, value, obj)
     return acc
@@ -181,7 +201,10 @@ export function mapObjectValues<T extends Record<string, any>, R>(obj: T, callba
  * mapObjectEntries({ a: 1 }, (k, v) => [k.toUpperCase(), v]) // { A: 1 }
  * mapObjectEntries({ a: 1 }, () => ['x', 2]) // { x: 2 }
  */
-export function mapObjectEntries<T extends Record<string, any>, R>(obj: T, callback: (key: string, value: T[keyof T], obj: T) => [newKey?: string, newValue?: R]): Record<string, R | T[keyof T]> {
+export function mapObjectEntries<T extends Record<string, any>, R>(
+  obj: T,
+  callback: (key: string, value: T[keyof T], obj: T) => [newKey?: string, newValue?: R],
+): Record<string, R | T[keyof T]> {
   return Object.entries(obj).reduce((acc, [key, value]) => {
     const [newKey = key, newValue = value] = callback(key, value, obj)
     acc[newKey] = newValue
