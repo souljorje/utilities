@@ -13,6 +13,7 @@
   "router": "module",
   "cleanOutputDir": true,
   "hidePageHeader": true,
+  "useCodeBlocks": true,
   "remarkPlugins": [
     {
       "applyTo": ["Module"],

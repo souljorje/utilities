@@ -18,9 +18,11 @@
 
 ### getDomain()
 
-> **getDomain**(`url`): `string`
+```ts
+function getDomain(url): string;
+```
 
-Defined in: [url.ts:60](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/url.ts#L60)
+Defined in: [url.ts:60](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/url.ts#L60)
 
 Extracts top-level domain from URL.
 
@@ -45,9 +47,11 @@ getDomain('https://site.com') // 'site.com'
 
 ### isAbsoluteUrl()
 
-> **isAbsoluteUrl**(`url`): `boolean`
+```ts
+function isAbsoluteUrl(url): boolean;
+```
 
-Defined in: [url.ts:29](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/url.ts#L29)
+Defined in: [url.ts:29](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/url.ts#L29)
 
 Returns true for absolute URLs.
 
@@ -72,9 +76,11 @@ isAbsoluteUrl('/account') // false
 
 ### isLocalUrl()
 
-> **isLocalUrl**(`url`, `currentBaseUrl`): `boolean`
+```ts
+function isLocalUrl(url, currentBaseUrl): boolean;
+```
 
-Defined in: [url.ts:38](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/url.ts#L38)
+Defined in: [url.ts:38](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/url.ts#L38)
 
 Checks whether URL is local or relative.
 
@@ -103,9 +109,11 @@ isLocalUrl('https://example.com') // false
 
 ### isValidUrl()
 
-> **isValidUrl**(`url`): `boolean`
+```ts
+function isValidUrl(url): boolean;
+```
 
-Defined in: [url.ts:14](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/url.ts#L14)
+Defined in: [url.ts:14](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/url.ts#L14)
 
 Validates URL string format.
 
@@ -130,9 +138,14 @@ isValidUrl('/accounts') // false
 
 ### isWhitelistedUrl()
 
-> **isWhitelistedUrl**(`url`, `whitelist`, `hostname`): `boolean`
+```ts
+function isWhitelistedUrl(
+   url, 
+   whitelist, 
+   hostname): boolean;
+```
 
-Defined in: [url.ts:78](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/url.ts#L78)
+Defined in: [url.ts:78](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/url.ts#L78)
 
 Checks whitelist membership by normalized domain.
 
@@ -165,9 +178,11 @@ isWhitelistedUrl('https://evil.io', ['site.com']) // false
 
 ### toRelativeUrl()
 
-> **toRelativeUrl**(`url`, `currentBaseUrl`): `string`
+```ts
+function toRelativeUrl(url, currentBaseUrl): string;
+```
 
-Defined in: [url.ts:49](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/url.ts#L49)
+Defined in: [url.ts:49](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/url.ts#L49)
 
 Removes base URL prefix from absolute URL.
 
@@ -196,6 +211,8 @@ toRelativeUrl('/path', 'https://site.com') // '/path'
 
 ### baseUrl
 
-> `const` **baseUrl**: `string`
+```ts
+const baseUrl: string;
+```
 
-Defined in: [url.ts:3](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/url.ts#L3)
+Defined in: [url.ts:3](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/url.ts#L3)

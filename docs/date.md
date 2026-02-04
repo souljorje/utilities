@@ -30,9 +30,11 @@
 
 ### dateDiffStructure()
 
-> **dateDiffStructure**(`date`, `units?`): [`TimeStructure`](#timestructure)
+```ts
+function dateDiffStructure(date, units?): TimeStructure;
+```
 
-Defined in: [date.ts:133](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/date.ts#L133)
+Defined in: [date.ts:133](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/date.ts#L133)
 
 Splits date delta into unit buckets.
 
@@ -61,9 +63,11 @@ dateDiffStructure(Date.now() - 3600000, ['hour']) // { hour: 1 }
 
 ### dateStructureToTime()
 
-> **dateStructureToTime**(`structure`): `number`
+```ts
+function dateStructureToTime(structure): number;
+```
 
-Defined in: [date.ts:188](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/date.ts#L188)
+Defined in: [date.ts:188](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/date.ts#L188)
 
 Converts unit structure into milliseconds.
 
@@ -88,9 +92,11 @@ dateStructureToTime({ minute: 1 }) // 60000
 
 ### dateToString()
 
-> **dateToString**(`date`, `options?`): `string`
+```ts
+function dateToString(date, options?): string;
+```
 
-Defined in: [date.ts:93](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/date.ts#L93)
+Defined in: [date.ts:93](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/date.ts#L93)
 
 Formats date using locale with optional compact output.
 
@@ -121,9 +127,11 @@ dateToString(new Date('2024-01-01T12:30:00Z'), { displayYear: true }) // locale 
 
 ### getDateDiff()
 
-> **getDateDiff**(`date`, `opts`): `string`
+```ts
+function getDateDiff(date, opts): string;
+```
 
-Defined in: [date.ts:202](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/date.ts#L202)
+Defined in: [date.ts:202](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/date.ts#L202)
 
 Returns relative date text with optional absolute-date fallback.
 
@@ -154,9 +162,11 @@ getDateDiff(Date.now() + 30000, { short: true }) // '30s left'
 
 ### getTimeDelta()
 
-> **getTimeDelta**(`date`): `number`
+```ts
+function getTimeDelta(date): number;
+```
 
-Defined in: [date.ts:124](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/date.ts#L124)
+Defined in: [date.ts:124](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/date.ts#L124)
 
 Returns absolute milliseconds difference between now and date.
 
@@ -180,9 +190,11 @@ getTimeDelta(Date.now() - 5000) // 5000
 
 ### getTwoMinutesDeadline()
 
-> **getTwoMinutesDeadline**(): `string`
+```ts
+function getTwoMinutesDeadline(): string;
+```
 
-Defined in: [date.ts:73](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/date.ts#L73)
+Defined in: [date.ts:73](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/date.ts#L73)
 
 Creates an ISO timestamp exactly two minutes from now.
 
@@ -201,9 +213,11 @@ typeof getTwoMinutesDeadline() // 'string'
 
 ### isFuture()
 
-> **isFuture**(`date`): `boolean`
+```ts
+function isFuture(date): boolean;
+```
 
-Defined in: [date.ts:82](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/date.ts#L82)
+Defined in: [date.ts:82](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/date.ts#L82)
 
 Returns true when target date is in the future.
 
@@ -228,9 +242,11 @@ isFuture(Date.now() - 1000) // false
 
 ### isToday()
 
-> **isToday**(`date`): `boolean`
+```ts
+function isToday(date): boolean;
+```
 
-Defined in: [date.ts:238](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/date.ts#L238)
+Defined in: [date.ts:238](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/date.ts#L238)
 
 Returns true when date falls on current local day.
 
@@ -255,9 +271,11 @@ isToday(new Date('2000-01-01T00:00:00Z')) // false
 
 ### toLocalUtcDate()
 
-> **toLocalUtcDate**(`date`): `Date`
+```ts
+function toLocalUtcDate(date): Date;
+```
 
-Defined in: [date.ts:220](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/date.ts#L220)
+Defined in: [date.ts:220](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/date.ts#L220)
 
 Creates local-time Date from UTC date components.
 
@@ -282,122 +300,154 @@ toLocalUtcDate(new Date()) // Date
 
 ### timeUnits
 
-> `const` **timeUnits**: `Record`<[`TimeUnitName`](#timeunitname), `number`>
+```ts
+const timeUnits: Record<TimeUnitName, number>;
+```
 
-Defined in: [date.ts:41](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/date.ts#L41)
+Defined in: [date.ts:41](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/date.ts#L41)
 
 ***
 
 ### timeUnitsNames
 
-> `const` **timeUnitsNames**: [`TimeUnitName`](#timeunitname)\[]
+```ts
+const timeUnitsNames: TimeUnitName[];
+```
 
-Defined in: [date.ts:54](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/date.ts#L54)
+Defined in: [date.ts:54](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/date.ts#L54)
 
 ***
 
 ### timeUnitsNamesShort
 
-> `const` **timeUnitsNamesShort**: `Record`<[`TimeUnitName`](#timeunitname), `string`>
+```ts
+const timeUnitsNamesShort: Record<TimeUnitName, string>;
+```
 
-Defined in: [date.ts:56](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/date.ts#L56)
+Defined in: [date.ts:56](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/date.ts#L56)
 
 ## Interfaces
 
 ### DateDiffOptions
 
-Defined in: [date.ts:14](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/date.ts#L14)
+Defined in: [date.ts:14](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/date.ts#L14)
 
 #### Properties
 
 ##### displayToday?
 
-> `optional` **displayToday**: `boolean`
+```ts
+optional displayToday: boolean;
+```
 
-Defined in: [date.ts:20](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/date.ts#L20)
+Defined in: [date.ts:20](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/date.ts#L20)
 
 ##### displayYear?
 
-> `optional` **displayYear**: `boolean`
+```ts
+optional displayYear: boolean;
+```
 
-Defined in: [date.ts:21](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/date.ts#L21)
+Defined in: [date.ts:21](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/date.ts#L21)
 
 ##### limit?
 
-> `optional` **limit**: `Partial`<`Record`<[`TimeUnitName`](#timeunitname), `number`>>
+```ts
+optional limit: Partial<Record<TimeUnitName, number>>;
+```
 
-Defined in: [date.ts:19](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/date.ts#L19)
+Defined in: [date.ts:19](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/date.ts#L19)
 
 ##### prefix?
 
-> `optional` **prefix**: `boolean`
+```ts
+optional prefix: boolean;
+```
 
-Defined in: [date.ts:18](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/date.ts#L18)
+Defined in: [date.ts:18](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/date.ts#L18)
 
 ##### short?
 
-> `optional` **short**: `boolean`
+```ts
+optional short: boolean;
+```
 
-Defined in: [date.ts:17](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/date.ts#L17)
+Defined in: [date.ts:17](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/date.ts#L17)
 
 ##### units?
 
-> `optional` **units**: [`TimeUnitName`](#timeunitname)\[]
+```ts
+optional units: TimeUnitName[];
+```
 
-Defined in: [date.ts:15](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/date.ts#L15)
+Defined in: [date.ts:15](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/date.ts#L15)
 
 ##### unitsCount?
 
-> `optional` **unitsCount**: `number`
+```ts
+optional unitsCount: number;
+```
 
-Defined in: [date.ts:16](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/date.ts#L16)
+Defined in: [date.ts:16](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/date.ts#L16)
 
 ***
 
 ### DateToStringOptions
 
-Defined in: [date.ts:8](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/date.ts#L8)
+Defined in: [date.ts:8](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/date.ts#L8)
 
 #### Properties
 
 ##### displayToday?
 
-> `optional` **displayToday**: `boolean`
+```ts
+optional displayToday: boolean;
+```
 
-Defined in: [date.ts:10](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/date.ts#L10)
+Defined in: [date.ts:10](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/date.ts#L10)
 
 ##### displayYear?
 
-> `optional` **displayYear**: `boolean`
+```ts
+optional displayYear: boolean;
+```
 
-Defined in: [date.ts:11](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/date.ts#L11)
+Defined in: [date.ts:11](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/date.ts#L11)
 
 ##### short?
 
-> `optional` **short**: `boolean`
+```ts
+optional short: boolean;
+```
 
-Defined in: [date.ts:9](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/date.ts#L9)
+Defined in: [date.ts:9](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/date.ts#L9)
 
 ## Type Aliases
 
 ### DateInput
 
-> **DateInput** = `Date` | `number`
+```ts
+type DateInput = Date | number;
+```
 
-Defined in: [date.ts:4](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/date.ts#L4)
+Defined in: [date.ts:4](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/date.ts#L4)
 
 ***
 
 ### TimeStructure
 
-> **TimeStructure** = `Partial`<`Record`<[`TimeUnitName`](#timeunitname), `number`>>
+```ts
+type TimeStructure = Partial<Record<TimeUnitName, number>>;
+```
 
-Defined in: [date.ts:6](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/date.ts#L6)
+Defined in: [date.ts:6](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/date.ts#L6)
 
 ***
 
 ### TimeUnitName
 
-> **TimeUnitName** = `"year"` | `"month"` | `"week"` | `"day"` | `"hour"` | `"minute"` | `"second"`
+```ts
+type TimeUnitName = "year" | "month" | "week" | "day" | "hour" | "minute" | "second";
+```
 
-Defined in: [date.ts:5](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/date.ts#L5)
+Defined in: [date.ts:5](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/date.ts#L5)

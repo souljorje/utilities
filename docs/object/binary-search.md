@@ -17,9 +17,14 @@
 
 ### binarySearch()
 
-> **binarySearch**<`T`>(`array`, `target`, `compare`): `number`
+```ts
+function binarySearch<T>(
+   array, 
+   target, 
+   compare): number;
+```
 
-Defined in: [object/binary-search.ts:72](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/object/binary-search.ts#L72)
+Defined in: [object/binary-search.ts:72](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/object/binary-search.ts#L72)
 
 Returns exact-match index for target, or -1 when absent.
 
@@ -58,9 +63,11 @@ binarySearch([1, 2, 4], 3) // -1
 
 ### binarySearchBase()
 
-> **binarySearchBase**<`T`>(`array`, `predicate`): `number`
+```ts
+function binarySearchBase<T>(array, predicate): number;
+```
 
-Defined in: [object/binary-search.ts:18](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/object/binary-search.ts#L18)
+Defined in: [object/binary-search.ts:18](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/object/binary-search.ts#L18)
 
 Core first-true binary search over a sorted array.
 
@@ -98,9 +105,14 @@ binarySearchBase([1, 3, 5], (v) => v > 10) // 3
 
 ### equalRange()
 
-> **equalRange**<`T`>(`array`, `target`, `compare`): \[`number`, `number`]
+```ts
+function equalRange<T>(
+   array, 
+   target, 
+   compare): [number, number];
+```
 
-Defined in: [object/binary-search.ts:93](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/object/binary-search.ts#L93)
+Defined in: [object/binary-search.ts:93](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/object/binary-search.ts#L93)
 
 Returns `[firstIndex, pastLastIndex]` range for all equal elements.
 
@@ -139,9 +151,14 @@ equalRange([1, 2, 2, 2, 4], 3) // [4, 4]
 
 ### lowerBound()
 
-> **lowerBound**<`T`>(`array`, `target`, `compare`): `number`
+```ts
+function lowerBound<T>(
+   array, 
+   target, 
+   compare): number;
+```
 
-Defined in: [object/binary-search.ts:42](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/object/binary-search.ts#L42)
+Defined in: [object/binary-search.ts:42](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/object/binary-search.ts#L42)
 
 Returns first index where `array[index] >= target`.
 
@@ -180,9 +197,14 @@ lowerBound([1, 2, 2, 4], 3) // 3
 
 ### upperBound()
 
-> **upperBound**<`T`>(`array`, `target`, `compare`): `number`
+```ts
+function upperBound<T>(
+   array, 
+   target, 
+   compare): number;
+```
 
-Defined in: [object/binary-search.ts:57](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/object/binary-search.ts#L57)
+Defined in: [object/binary-search.ts:57](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/object/binary-search.ts#L57)
 
 Returns first index where `array[index] > target`.
 
@@ -221,9 +243,11 @@ upperBound([1, 2, 2, 4], 5) // 4
 
 ### Comparator()
 
-> **Comparator**<`T`> = (`a`, `b`) => `number`
+```ts
+type Comparator<T> = (a, b) => number;
+```
 
-Defined in: [object/binary-search.ts:4](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/object/binary-search.ts#L4)
+Defined in: [object/binary-search.ts:4](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/object/binary-search.ts#L4)
 
 Comparator contract used by binary-search helpers.
 

@@ -14,9 +14,11 @@
 
 ### getDecimalsCount()
 
-> **getDecimalsCount**(`num`): `number`
+```ts
+function getDecimalsCount(num): number;
+```
 
-Defined in: [number.ts:26](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/number.ts#L26)
+Defined in: [number.ts:26](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/number.ts#L26)
 
 Returns count of decimal digits in number representation.
 
@@ -41,9 +43,11 @@ getDecimalsCount(10) // 0
 
 ### getPercentage()
 
-> **getPercentage**(`first`, `second`): `number`
+```ts
+function getPercentage(first, second): number;
+```
 
-Defined in: [number.ts:8](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/number.ts#L8)
+Defined in: [number.ts:8](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/number.ts#L8)
 
 Calculates first as a percentage of second.
 
@@ -72,9 +76,11 @@ getPercentage(1, 4) // 25
 
 ### getPercentageChange()
 
-> **getPercentageChange**(`from`, `to`): `number`
+```ts
+function getPercentageChange(from, to): number;
+```
 
-Defined in: [number.ts:17](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/number.ts#L17)
+Defined in: [number.ts:17](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/number.ts#L17)
 
 Calculates percentage change between two numbers
 
@@ -103,9 +109,11 @@ getPercentageChange(25, 200) // −87.5
 
 ### getRandomNumber()
 
-> **getRandomNumber**(`min`, `max`): `number`
+```ts
+function getRandomNumber(min, max): number;
+```
 
-Defined in: [number.ts:35](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/number.ts#L35)
+Defined in: [number.ts:35](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/number.ts#L35)
 
 Generates a random integer in the inclusive range \[min, max].
 

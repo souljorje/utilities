@@ -15,9 +15,14 @@
 
 ### debounce()
 
-> **debounce**<`T`>(`func`, `timeout`, `immediate`): (...`args`) => `void`
+```ts
+function debounce<T>(
+   func, 
+   timeout, 
+   immediate): (...args) => void;
+```
 
-Defined in: [misc.ts:31](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/misc.ts#L31)
+Defined in: [misc.ts:31](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/misc.ts#L31)
 
 Delays execution until a timeout passes after the most recent call.
 
@@ -43,7 +48,9 @@ Delays execution until a timeout passes after the most recent call.
 
 #### Returns
 
-> (...`args`): `void`
+```ts
+(...args): void;
+```
 
 ##### Parameters
 
@@ -66,9 +73,11 @@ fn('a'); fn('b') // logs only 'b'
 
 ### delay()
 
-> **delay**(`ms`): `Promise`<`void`>
+```ts
+function delay(ms): Promise<void>;
+```
 
-Defined in: [misc.ts:22](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/misc.ts#L22)
+Defined in: [misc.ts:22](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/misc.ts#L22)
 
 Resolves after the provided delay.
 
@@ -93,9 +102,11 @@ await delay(0) // resolves on next tick
 
 ### functionable()
 
-> **functionable**<`T`, `A`>(`value`, ...`args`): `T`
+```ts
+function functionable<T, A>(value, ...args): T;
+```
 
-Defined in: [misc.ts:11](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/misc.ts#L11)
+Defined in: [misc.ts:11](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/misc.ts#L11)
 
 Resolves value directly, or calls it if it is a function
 with rest parameters as arguments
@@ -135,9 +146,11 @@ functionable(5) // 5
 
 ### safeJSONParse()
 
-> **safeJSONParse**<`T`>(`v`): `""` | `T`
+```ts
+function safeJSONParse<T>(v): "" | T;
+```
 
-Defined in: [misc.ts:71](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/misc.ts#L71)
+Defined in: [misc.ts:71](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/misc.ts#L71)
 
 Parses JSON and returns an empty string on failure.
 
@@ -168,9 +181,11 @@ safeJSONParse('{bad}') // ''
 
 ### throttle()
 
-> **throttle**<`T`>(`func`, `timeout`): (...`args`) => `void`
+```ts
+function throttle<T>(func, timeout): (...args) => void;
+```
 
-Defined in: [misc.ts:52](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/misc.ts#L52)
+Defined in: [misc.ts:52](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/misc.ts#L52)
 
 Limits execution to at most once per timeout window.
 
@@ -192,7 +207,9 @@ Limits execution to at most once per timeout window.
 
 #### Returns
 
-> (...`args`): `void`
+```ts
+(...args): void;
+```
 
 ##### Parameters
 

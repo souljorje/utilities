@@ -14,9 +14,11 @@
 
 ### convertArrayOfObjectsToCSV()
 
-> **convertArrayOfObjectsToCSV**(`data`, `__namedParameters`): `string` | `null`
+```ts
+function convertArrayOfObjectsToCSV(data, __namedParameters): string | null;
+```
 
-Defined in: [csv.ts:15](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/csv.ts#L15)
+Defined in: [csv.ts:15](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/csv.ts#L15)
 
 Converts object rows into CSV text.
 
@@ -53,14 +55,18 @@ convertArrayOfObjectsToCSV([{ a: 1, b: 2 }], { columnDelimiter: ';' }) // 'a;b\n
 
 ### CsvRow
 
-> **CsvRow** = `Record`<`string`, [`CsvValue`](#csvvalue)>
+```ts
+type CsvRow = Record<string, CsvValue>;
+```
 
-Defined in: [csv.ts:4](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/csv.ts#L4)
+Defined in: [csv.ts:4](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/csv.ts#L4)
 
 ***
 
 ### CsvValue
 
-> **CsvValue** = `string` | `number` | `boolean` | `null` | `undefined`
+```ts
+type CsvValue = string | number | boolean | null | undefined;
+```
 
-Defined in: [csv.ts:3](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/csv.ts#L3)
+Defined in: [csv.ts:3](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/csv.ts#L3)

@@ -22,9 +22,14 @@
 
 ### abbreviateString()
 
-> **abbreviateString**(`v`, `startCount`, `endCount`): `string`
+```ts
+function abbreviateString(
+   v, 
+   startCount, 
+   endCount): string;
+```
 
-Defined in: [string.ts:53](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/string.ts#L53)
+Defined in: [string.ts:53](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/string.ts#L53)
 
 Keeps start and end segments with ellipsis in the middle.
 
@@ -57,9 +62,11 @@ abbreviateString('abcdef', 3, 1) // 'abc...f'
 
 ### capitalize()
 
-> **capitalize**(`s`): `string`
+```ts
+function capitalize(s): string;
+```
 
-Defined in: [string.ts:28](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/string.ts#L28)
+Defined in: [string.ts:28](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/string.ts#L28)
 
 Uppercases the first character.
 
@@ -84,9 +91,11 @@ capitalize('') // ''
 
 ### decodeHEX()
 
-> **decodeHEX**(`s`): `string`
+```ts
+function decodeHEX(s): string;
+```
 
-Defined in: [string.ts:71](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/string.ts#L71)
+Defined in: [string.ts:71](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/string.ts#L71)
 
 Decodes a hex string into UTF-8 text.
 
@@ -111,9 +120,11 @@ decodeHEX('74657a6f73') // 'foo'
 
 ### emptyable()
 
-> **emptyable**<`T`>(`value`, `emptyValue`): `unknown`
+```ts
+function emptyable<T>(value, emptyValue): unknown;
+```
 
-Defined in: [string.ts:100](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/string.ts#L100)
+Defined in: [string.ts:100](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/string.ts#L100)
 
 Returns fallback text when value is falsy.
 
@@ -148,9 +159,11 @@ emptyable('ok', 'n/a') // 'ok'
 
 ### generateId()
 
-> **generateId**(): `string`
+```ts
+function generateId(): string;
+```
 
-Defined in: [string.ts:44](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/string.ts#L44)
+Defined in: [string.ts:44](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/string.ts#L44)
 
 Creates a random UUID.
 
@@ -168,9 +181,11 @@ generateId() // '550e8400-e29b-41d4-a716-446655440000'
 
 ### humanize()
 
-> **humanize**(`s`): `string`
+```ts
+function humanize(s): string;
+```
 
-Defined in: [string.ts:19](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/string.ts#L19)
+Defined in: [string.ts:19](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/string.ts#L19)
 
 Replaces underscores with spaces.
 
@@ -195,9 +210,11 @@ humanize('hello') // 'hello'
 
 ### pluralize()
 
-> **pluralize**(`word`, `count`): `string`
+```ts
+function pluralize(word, count): string;
+```
 
-Defined in: [string.ts:10](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/string.ts#L10)
+Defined in: [string.ts:10](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/string.ts#L10)
 
 Adds plural suffix when count is not singular.
 
@@ -226,9 +243,11 @@ pluralize('block', 1) // 'block'
 
 ### snakeCaseToCamelCase()
 
-> **snakeCaseToCamelCase**(`s`): `string`
+```ts
+function snakeCaseToCamelCase(s): string;
+```
 
-Defined in: [string.ts:86](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/string.ts#L86)
+Defined in: [string.ts:86](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/string.ts#L86)
 
 Converts snake\_case text to camelCase.
 
@@ -253,9 +272,11 @@ snakeCaseToCamelCase('alreadyCamel') // 'alreadyCamel'
 
 ### titleize()
 
-> **titleize**(`s`): `string`
+```ts
+function titleize(s): string;
+```
 
-Defined in: [string.ts:36](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/string.ts#L36)
+Defined in: [string.ts:36](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/string.ts#L36)
 
 Humanizes and capitalizes a string.
 
@@ -279,9 +300,11 @@ titleize('hello_world') // 'Hello world'
 
 ### trimToLowercase()
 
-> **trimToLowercase**(`s?`): `string` | `undefined`
+```ts
+function trimToLowercase(s?): string | undefined;
+```
 
-Defined in: [string.ts:62](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/string.ts#L62)
+Defined in: [string.ts:62](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/string.ts#L62)
 
 Trims and lowercases a string safely.
 
@@ -306,6 +329,8 @@ trimToLowercase(undefined) // undefined
 
 ### blankValue
 
-> `const` **blankValue**: `"—"` = `'—'`
+```ts
+const blankValue: "—" = '—';
+```
 
-Defined in: [string.ts:1](https://github.com/souljorje/utilities/blob/3f91830d17da9fbdba6ce578971e8051de26d2e3/src/string.ts#L1)
+Defined in: [string.ts:1](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/string.ts#L1)
