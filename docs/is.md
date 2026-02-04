@@ -21,18 +21,18 @@
 ### isDate()
 
 ```ts
-function isDate(v): v is Date;
+function isDate(v: unknown): v is Date;
 ```
 
-Defined in: [is.ts:17](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/is.ts#L17)
+Defined in: [is.ts:17](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/is.ts#L17)
 
 Returns true when the value is a Date instance.
 
 #### Parameters
 
-##### v
-
-`unknown`
+| Parameter | Type |
+| ------ | ------ |
+| `v` | `unknown` |
 
 #### Returns
 
@@ -50,24 +50,24 @@ isDate('abc') // false
 ### isDefined()
 
 ```ts
-function isDefined<T>(v): v is T;
+function isDefined<T>(v: T | undefined): v is T;
 ```
 
-Defined in: [is.ts:58](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/is.ts#L58)
+Defined in: [is.ts:58](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/is.ts#L58)
 
 Returns true when the value is not undefined.
 
 #### Type Parameters
 
-##### T
-
-`T`
+| Type Parameter |
+| ------ |
+| `T` |
 
 #### Parameters
 
-##### v
-
-`T` | `undefined`
+| Parameter | Type |
+| ------ | ------ |
+| `v` | `T` | `undefined` |
 
 #### Returns
 
@@ -85,24 +85,24 @@ isDefined(undefined) // false
 ### isFunction()
 
 ```ts
-function isFunction<T>(v): v is T;
+function isFunction<T>(v: unknown): v is T;
 ```
 
-Defined in: [is.ts:47](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/is.ts#L47)
+Defined in: [is.ts:47](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/is.ts#L47)
 
 Returns true when the value is callable.
 
 #### Type Parameters
 
-##### T
-
-`T` *extends* (...`args`) => `unknown`
+| Type Parameter |
+| ------ |
+| `T` *extends* (...`args`: `any`\[]) => `unknown` |
 
 #### Parameters
 
-##### v
-
-`unknown`
+| Parameter | Type |
+| ------ | ------ |
+| `v` | `unknown` |
 
 #### Returns
 
@@ -120,18 +120,18 @@ isFunction('abc') // false
 ### isMap()
 
 ```ts
-function isMap(v): v is Map<unknown, unknown>;
+function isMap(v: unknown): v is Map<unknown, unknown>;
 ```
 
-Defined in: [is.ts:98](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/is.ts#L98)
+Defined in: [is.ts:98](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/is.ts#L98)
 
 Returns true when value is a Map.
 
 #### Parameters
 
-##### v
-
-`unknown`
+| Parameter | Type |
+| ------ | ------ |
+| `v` | `unknown` |
 
 #### Returns
 
@@ -149,18 +149,18 @@ isMap({}) // false
 ### isNullish()
 
 ```ts
-function isNullish(v): v is null | undefined;
+function isNullish(v: unknown): v is null | undefined;
 ```
 
-Defined in: [is.ts:67](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/is.ts#L67)
+Defined in: [is.ts:67](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/is.ts#L67)
 
 Returns true when value is null or undefined.
 
 #### Parameters
 
-##### v
-
-`unknown`
+| Parameter | Type |
+| ------ | ------ |
+| `v` | `unknown` |
 
 #### Returns
 
@@ -178,18 +178,18 @@ isNullish('') // false
 ### isNumber()
 
 ```ts
-function isNumber(value): value is number;
+function isNumber(value: unknown): value is number;
 ```
 
-Defined in: [is.ts:27](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/is.ts#L27)
+Defined in: [is.ts:27](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/is.ts#L27)
 
 Returns true for finite numbers excluding NaN.
 
 #### Parameters
 
-##### value
-
-`unknown`
+| Parameter | Type |
+| ------ | ------ |
+| `value` | `unknown` |
 
 #### Returns
 
@@ -208,18 +208,18 @@ isNumber(Number.NaN) // false
 ### isPlainObject()
 
 ```ts
-function isPlainObject(v): v is Record<string, unknown>;
+function isPlainObject(v: unknown): v is Record<string, unknown>;
 ```
 
-Defined in: [is.ts:76](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/is.ts#L76)
+Defined in: [is.ts:76](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/is.ts#L76)
 
 Returns true only for plain object literals.
 
 #### Parameters
 
-##### v
-
-`unknown`
+| Parameter | Type |
+| ------ | ------ |
+| `v` | `unknown` |
 
 #### Returns
 
@@ -237,18 +237,18 @@ isPlainObject([]) // false
 ### isSet()
 
 ```ts
-function isSet(v): v is Set<unknown>;
+function isSet(v: unknown): v is Set<unknown>;
 ```
 
-Defined in: [is.ts:89](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/is.ts#L89)
+Defined in: [is.ts:89](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/is.ts#L89)
 
 Returns true when value is a Set.
 
 #### Parameters
 
-##### v
-
-`unknown`
+| Parameter | Type |
+| ------ | ------ |
+| `v` | `unknown` |
 
 #### Returns
 
@@ -266,18 +266,18 @@ isSet([1]) // false
 ### isString()
 
 ```ts
-function isString(v): v is string;
+function isString(v: unknown): v is string;
 ```
 
-Defined in: [is.ts:8](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/is.ts#L8)
+Defined in: [is.ts:8](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/is.ts#L8)
 
 Returns true when the value is a string.
 
 #### Parameters
 
-##### v
-
-`unknown`
+| Parameter | Type |
+| ------ | ------ |
+| `v` | `unknown` |
 
 #### Returns
 
@@ -295,18 +295,18 @@ isString(42) // false
 ### isStringOrNumber()
 
 ```ts
-function isStringOrNumber(value): value is string | number;
+function isStringOrNumber(value: unknown): value is string | number;
 ```
 
-Defined in: [is.ts:36](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/is.ts#L36)
+Defined in: [is.ts:36](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/is.ts#L36)
 
 Returns true for string or finite number values.
 
 #### Parameters
 
-##### value
-
-`unknown`
+| Parameter | Type |
+| ------ | ------ |
+| `value` | `unknown` |
 
 #### Returns
 

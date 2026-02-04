@@ -14,6 +14,8 @@
   "cleanOutputDir": true,
   "hidePageHeader": true,
   "useCodeBlocks": true,
+  "expandParameters": true,
+  "parametersFormat": "table",
   "remarkPlugins": [
     {
       "applyTo": ["Module"],

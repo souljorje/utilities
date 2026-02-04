@@ -36,38 +36,29 @@
 
 ```ts
 function arrayAddConditionally<T, F>(
-   condition, 
-   value, 
-   fallbackValue): (T | F)[];
+   condition: boolean, 
+   value: T | T[], 
+   fallbackValue: F | F[]): (T | F)[];
 ```
 
-Defined in: [object/index.ts:82](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/object/index.ts#L82)
+Defined in: [object/index.ts:82](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/object/index.ts#L82)
 
 Returns value/fallback as array depending on condition.
 
 #### Type Parameters
 
-##### T
-
-`T`
-
-##### F
-
-`F` = `never`
+| Type Parameter | Default type |
+| ------ | ------ |
+| `T` | - |
+| `F` | `never` |
 
 #### Parameters
 
-##### condition
-
-`boolean`
-
-##### value
-
-`T` | `T`\[]
-
-##### fallbackValue
-
-`F` | `F`\[]
+| Parameter | Type |
+| ------ | ------ |
+| `condition` | `boolean` |
+| `value` | `T` | `T`\[] |
+| `fallbackValue` | `F` | `F`\[] |
 
 #### Returns
 
@@ -85,24 +76,24 @@ arrayAddConditionally(false, 1, 2) // [2]
 ### arrayCreateConditionally()
 
 ```ts
-function arrayCreateConditionally<T>(...map): T[];
+function arrayCreateConditionally<T>(...map: (T | [boolean, ...T[]])[]): T[];
 ```
 
-Defined in: [object/index.ts:97](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/object/index.ts#L97)
+Defined in: [object/index.ts:97](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/object/index.ts#L97)
 
 Builds an array from direct values and conditional tuples.
 
 #### Type Parameters
 
-##### T
-
-`T`
+| Type Parameter |
+| ------ |
+| `T` |
 
 #### Parameters
 
-##### map
-
-...(`T` | \[`boolean`, `...T[]`])\[]
+| Parameter | Type |
+| ------ | ------ |
+| ...`map` | (`T` | \[`boolean`, `...T[]`])\[] |
 
 #### Returns
 
@@ -120,24 +111,24 @@ arrayCreateConditionally([true, 1, 2], [true, 3]) // [1, 2, 3]
 ### ensureArray()
 
 ```ts
-function ensureArray<T>(value): T[];
+function ensureArray<T>(value: T | T[]): T[];
 ```
 
-Defined in: [object/index.ts:38](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/object/index.ts#L38)
+Defined in: [object/index.ts:38](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/object/index.ts#L38)
 
 Normalizes a single value to an array.
 
 #### Type Parameters
 
-##### T
-
-`T`
+| Type Parameter |
+| ------ |
+| `T` |
 
 #### Parameters
 
-##### value
-
-`T` | `T`\[]
+| Parameter | Type |
+| ------ | ------ |
+| `value` | `T` | `T`\[] |
 
 #### Returns
 
@@ -156,38 +147,29 @@ ensureArray([1, 2]) // [1, 2]
 
 ```ts
 function findByPropertyValue<T, K>(
-   obj, 
-   key, 
-   value): T | undefined;
+   obj: Record<string, T>, 
+   key: K, 
+   value: T[K]): T | undefined;
 ```
 
-Defined in: [object/index.ts:67](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/object/index.ts#L67)
+Defined in: [object/index.ts:67](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/object/index.ts#L67)
 
 Finds first item by matching property value.
 
 #### Type Parameters
 
-##### T
-
-`T` *extends* `Record`<`string`, `any`>
-
-##### K
-
-`K` *extends* `string` | `number` | `symbol`
+| Type Parameter |
+| ------ |
+| `T` *extends* `Record`<`string`, `any`> |
+| `K` *extends* `string` | `number` | `symbol` |
 
 #### Parameters
 
-##### obj
-
-`Record`<`string`, `T`>
-
-##### key
-
-`K`
-
-##### value
-
-`T`\[`K`]
+| Parameter | Type |
+| ------ | ------ |
+| `obj` | `Record`<`string`, `T`> |
+| `key` | `K` |
+| `value` | `T`\[`K`] |
 
 #### Returns
 
@@ -205,10 +187,10 @@ findByPropertyValue({ x: { id: 1 } }, 'id', 2) // undefined
 ### getAllCombinations()
 
 ```ts
-function getAllCombinations<T>(arraysToCombine): T[][];
+function getAllCombinations<T>(arraysToCombine: readonly readonly T[][]): T[][];
 ```
 
-Defined in: [object/index.ts:254](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/object/index.ts#L254)
+Defined in: [object/index.ts:254](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/object/index.ts#L254)
 
 Generates all possible combinations by taking one element from each input array.
 Aka Cartesian product (not complete).
@@ -217,15 +199,15 @@ Order of combinations is deterministic and stable.
 
 #### Type Parameters
 
-##### T
-
-`T`
+| Type Parameter |
+| ------ |
+| `T` |
 
 #### Parameters
 
-##### arraysToCombine
-
-readonly readonly `T`\[]\[]
+| Parameter | Type |
+| ------ | ------ |
+| `arraysToCombine` | readonly readonly `T`\[]\[] |
 
 #### Returns
 
@@ -244,34 +226,28 @@ getAllCombinations([]); // [[]]
 
 ```ts
 function getPropByPath<T>(
-   object, 
-   path, 
-   defaultValue?): T | undefined;
+   object: any, 
+   path: string | (string | number)[], 
+   defaultValue?: T): T | undefined;
 ```
 
-Defined in: [object/index.ts:127](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/object/index.ts#L127)
+Defined in: [object/index.ts:127](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/object/index.ts#L127)
 
 Gets nested property value by dotted or array path.
 
 #### Type Parameters
 
-##### T
-
-`T` = `unknown`
+| Type Parameter | Default type |
+| ------ | ------ |
+| `T` | `unknown` |
 
 #### Parameters
 
-##### object
-
-`any`
-
-##### path
-
-`string` | (`string` | `number`)\[]
-
-##### defaultValue?
-
-`T`
+| Parameter | Type |
+| ------ | ------ |
+| `object` | `any` |
+| `path` | `string` | (`string` | `number`)\[] |
+| `defaultValue?` | `T` |
 
 #### Returns
 
@@ -289,24 +265,24 @@ getPropByPath({ a: {} }, 'a.b', 0) // 0
 ### getRandomArrayItem()
 
 ```ts
-function getRandomArrayItem<T>(array): T;
+function getRandomArrayItem<T>(array: readonly T[]): T;
 ```
 
-Defined in: [object/index.ts:118](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/object/index.ts#L118)
+Defined in: [object/index.ts:118](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/object/index.ts#L118)
 
 Returns random item from the array.
 
 #### Type Parameters
 
-##### T
-
-`T`
+| Type Parameter |
+| ------ |
+| `T` |
 
 #### Parameters
 
-##### array
-
-readonly `T`\[]
+| Parameter | Type |
+| ------ | ------ |
+| `array` | readonly `T`\[] |
 
 #### Returns
 
@@ -324,25 +300,25 @@ getRandomArrayItem([1]) // 1
 ### getWeightedRandomItem()
 
 ```ts
-function getWeightedRandomItem<T>(items): T;
+function getWeightedRandomItem<T>(items: T[]): T;
 ```
 
-Defined in: [object/index.ts:223](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/object/index.ts#L223)
+Defined in: [object/index.ts:223](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/object/index.ts#L223)
 
 Returns weighted random item based on the `weight` field.
 Higher weight values increase selection probability proportionally.
 
 #### Type Parameters
 
-##### T
-
-`T` *extends* `object`
+| Type Parameter |
+| ------ |
+| `T` *extends* `object` |
 
 #### Parameters
 
-##### items
-
-`T`\[]
+| Parameter | Type |
+| ------ | ------ |
+| `items` | `T`\[] |
 
 #### Returns
 
@@ -360,32 +336,26 @@ getWeightedRandomItem([{ id: 1, weight: 1 }]) // { id: 1, weight: 1 }
 ### groupBy()
 
 ```ts
-function groupBy<T, K>(arr, key): Record<string, T[]>;
+function groupBy<T, K>(arr: T[], key: K): Record<string, T[]>;
 ```
 
-Defined in: [object/index.ts:23](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/object/index.ts#L23)
+Defined in: [object/index.ts:23](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/object/index.ts#L23)
 
 Groups array items by selected key.
 
 #### Type Parameters
 
-##### T
-
-`T`
-
-##### K
-
-`K` *extends* `string` | `number` | `symbol`
+| Type Parameter |
+| ------ |
+| `T` |
+| `K` *extends* `string` | `number` | `symbol` |
 
 #### Parameters
 
-##### arr
-
-`T`\[]
-
-##### key
-
-`K`
+| Parameter | Type |
+| ------ | ------ |
+| `arr` | `T`\[] |
+| `key` | `K` |
 
 #### Returns
 
@@ -403,18 +373,18 @@ groupBy([{ n: 1 }, { n: 2 }], 'n') // { 1: [...], 2: [...] }
 ### isEmptyObject()
 
 ```ts
-function isEmptyObject(obj): boolean;
+function isEmptyObject(obj: Record<string, unknown>): boolean;
 ```
 
-Defined in: [object/index.ts:12](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/object/index.ts#L12)
+Defined in: [object/index.ts:12](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/object/index.ts#L12)
 
 Returns true when object has no enumerable keys.
 
 #### Parameters
 
-##### obj
-
-`Record`<`string`, `unknown`>
+| Parameter | Type |
+| ------ | ------ |
+| `obj` | `Record`<`string`, `unknown`> |
 
 #### Returns
 
@@ -433,42 +403,30 @@ isEmptyObject({ a: 1 }) // false
 
 ```ts
 function mapKeysToValues<K, V, R>(
-   keys, 
-   values, 
-   getValue): Record<K, R>[];
+   keys: K[], 
+   values: V[][], 
+   getValue: (key: K, value: V) => R): Record<K, R>[];
 ```
 
-Defined in: [object/index.ts:47](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/object/index.ts#L47)
+Defined in: [object/index.ts:47](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/object/index.ts#L47)
 
 Maps tabular rows to objects using provided keys.
 
 #### Type Parameters
 
-##### K
-
-`K` *extends* `string`
-
-##### V
-
-`V`
-
-##### R
-
-`R` = `V`
+| Type Parameter | Default type |
+| ------ | ------ |
+| `K` *extends* `string` | - |
+| `V` | - |
+| `R` | `V` |
 
 #### Parameters
 
-##### keys
-
-`K`\[]
-
-##### values
-
-`V`\[]\[]
-
-##### getValue
-
-(`key`, `value`) => `R`
+| Parameter | Type |
+| ------ | ------ |
+| `keys` | `K`\[] |
+| `values` | `V`\[]\[] |
+| `getValue` | (`key`: `K`, `value`: `V`) => `R` |
 
 #### Returns
 
@@ -486,32 +444,26 @@ mapKeysToValues(['a'], [[1], [2]]) // [{ a: 1 }, { a: 2 }]
 ### mapObjectEntries()
 
 ```ts
-function mapObjectEntries<T, R>(obj, callback): Record<string, R | T[keyof T]>;
+function mapObjectEntries<T, R>(obj: T, callback: (key: string, value: T[keyof T], obj: T) => [string, R]): Record<string, R | T[keyof T]>;
 ```
 
-Defined in: [object/index.ts:204](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/object/index.ts#L204)
+Defined in: [object/index.ts:204](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/object/index.ts#L204)
 
 Maps object entries with optional key remapping.
 
 #### Type Parameters
 
-##### T
-
-`T` *extends* `Record`<`string`, `any`>
-
-##### R
-
-`R`
+| Type Parameter |
+| ------ |
+| `T` *extends* `Record`<`string`, `any`> |
+| `R` |
 
 #### Parameters
 
-##### obj
-
-`T`
-
-##### callback
-
-(`key`, `value`, `obj`) => \[`string`, `R`]
+| Parameter | Type |
+| ------ | ------ |
+| `obj` | `T` |
+| `callback` | (`key`: `string`, `value`: `T`\[keyof `T`], `obj`: `T`) => \[`string`, `R`] |
 
 #### Returns
 
@@ -529,32 +481,26 @@ mapObjectEntries({ a: 1 }, () => ['x', 2]) // { x: 2 }
 ### mapObjectValues()
 
 ```ts
-function mapObjectValues<T, R>(obj, callback): Record<string, R>;
+function mapObjectValues<T, R>(obj: T, callback: (key: string, value: T[keyof T], obj: T) => R): Record<string, R>;
 ```
 
-Defined in: [object/index.ts:187](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/object/index.ts#L187)
+Defined in: [object/index.ts:187](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/object/index.ts#L187)
 
 Maps object values and keeps original keys.
 
 #### Type Parameters
 
-##### T
-
-`T` *extends* `Record`<`string`, `any`>
-
-##### R
-
-`R`
+| Type Parameter |
+| ------ |
+| `T` *extends* `Record`<`string`, `any`> |
+| `R` |
 
 #### Parameters
 
-##### obj
-
-`T`
-
-##### callback
-
-(`key`, `value`, `obj`) => `R`
+| Parameter | Type |
+| ------ | ------ |
+| `obj` | `T` |
+| `callback` | (`key`: `string`, `value`: `T`\[keyof `T`], `obj`: `T`) => `R` |
 
 #### Returns
 
@@ -572,29 +518,26 @@ mapObjectValues({ a: 1, b: 2 }, (_k, v) => v * 2) // { a: 2, b: 4 }
 ### mergeObjects()
 
 ```ts
-function mergeObjects<T>(source, updates): T;
+function mergeObjects<T>(source: T, updates: Partial<T>): T;
 ```
 
-Defined in: [object/index.ts:171](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/object/index.ts#L171)
+Defined in: [object/index.ts:171](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/object/index.ts#L171)
 
 Deep-merges plain objects without mutating inputs.
 Arrays are not concatenated and are treated as scalar values.
 
 #### Type Parameters
 
-##### T
-
-`T` *extends* `Record`<`string`, `any`>
+| Type Parameter |
+| ------ |
+| `T` *extends* `Record`<`string`, `any`> |
 
 #### Parameters
 
-##### source
-
-`T`
-
-##### updates
-
-`Partial`<`T`>
+| Parameter | Type |
+| ------ | ------ |
+| `source` | `T` |
+| `updates` | `Partial`<`T`> |
 
 #### Returns
 
@@ -612,24 +555,24 @@ mergeObjects({ a: 1 }, {}) // { a: 1 }
 ### toSet()
 
 ```ts
-function toSet<T>(values): Set<T>;
+function toSet<T>(values: Iterable<T, any, any> | Set<T>): Set<T>;
 ```
 
-Defined in: [object/index.ts:240](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/object/index.ts#L240)
+Defined in: [object/index.ts:240](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/object/index.ts#L240)
 
 Converts iterable values to a Set instance.
 
 #### Type Parameters
 
-##### T
-
-`T`
+| Type Parameter |
+| ------ |
+| `T` |
 
 #### Parameters
 
-##### values
-
-`Iterable`<`T`, `any`, `any`> | `Set`<`T`>
+| Parameter | Type |
+| ------ | ------ |
+| `values` | `Iterable`<`T`, `any`, `any`> | `Set`<`T`> |
 
 #### Returns
 
@@ -647,24 +590,24 @@ toSet(new Set([1, 2])) // Set(2) { 1, 2 }
 ### uniq()
 
 ```ts
-function uniq<T>(items): T[];
+function uniq<T>(items: T[]): T[];
 ```
 
-Defined in: [object/index.ts:142](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/object/index.ts#L142)
+Defined in: [object/index.ts:142](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/object/index.ts#L142)
 
 Removes duplicate values using `Set`.
 
 #### Type Parameters
 
-##### T
-
-`T`
+| Type Parameter |
+| ------ |
+| `T` |
 
 #### Parameters
 
-##### items
-
-`T`\[]
+| Parameter | Type |
+| ------ | ------ |
+| `items` | `T`\[] |
 
 #### Returns
 
@@ -682,32 +625,26 @@ uniq(['a', 'a', 'b']) // ['a', 'b']
 ### uniqBy()
 
 ```ts
-function uniqBy<T, K>(arr, selector): T[];
+function uniqBy<T, K>(arr: T[], selector: (item: T) => K): T[];
 ```
 
-Defined in: [object/index.ts:151](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/object/index.ts#L151)
+Defined in: [object/index.ts:151](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/object/index.ts#L151)
 
 Removes duplicate items by selector key.
 
 #### Type Parameters
 
-##### T
-
-`T`
-
-##### K
-
-`K`
+| Type Parameter |
+| ------ |
+| `T` |
+| `K` |
 
 #### Parameters
 
-##### arr
-
-`T`\[]
-
-##### selector
-
-(`item`) => `K`
+| Parameter | Type |
+| ------ | ------ |
+| `arr` | `T`\[] |
+| `selector` | (`item`: `T`) => `K` |
 
 #### Returns
 

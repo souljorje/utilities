@@ -12,22 +12,19 @@
 ### hex2rgba()
 
 ```ts
-function hex2rgba(hex, alpha): string;
+function hex2rgba(hex: string, alpha: number): string;
 ```
 
-Defined in: [colors.ts:7](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/colors.ts#L7)
+Defined in: [colors.ts:7](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/colors.ts#L7)
 
 Converts hex color code to rgba string.
 
 #### Parameters
 
-##### hex
-
-`string`
-
-##### alpha
-
-`number` = `1`
+| Parameter | Type | Default value |
+| ------ | ------ | ------ |
+| `hex` | `string` | `undefined` |
+| `alpha` | `number` | `1` |
 
 #### Returns
 

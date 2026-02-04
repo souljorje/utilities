@@ -15,10 +15,10 @@
 ### convertArrayOfObjectsToCSV()
 
 ```ts
-function convertArrayOfObjectsToCSV(data, __namedParameters): string | null;
+function convertArrayOfObjectsToCSV(data: CsvRow[] | null | undefined, __namedParameters: object): string | null;
 ```
 
-Defined in: [csv.ts:15](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/csv.ts#L15)
+Defined in: [csv.ts:15](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/csv.ts#L15)
 
 Converts object rows into CSV text.
 
@@ -27,19 +27,12 @@ column order for all rows.
 
 #### Parameters
 
-##### data
-
-[`CsvRow`](#csvrow)\[] | `null` | `undefined`
-
-##### \_\_namedParameters
-
-###### columnDelimiter?
-
-`string` = `','`
-
-###### lineDelimiter?
-
-`string` = '\n'
+| Parameter | Type |
+| ------ | ------ |
+| `data` | [`CsvRow`](#csvrow)\[] | `null` | `undefined` |
+| `__namedParameters` | { `columnDelimiter?`: `string`; `lineDelimiter?`: `string`; } |
+| `__namedParameters.columnDelimiter?` | `string` |
+| `__namedParameters.lineDelimiter?` | `string` |
 
 #### Returns
 
@@ -59,7 +52,7 @@ convertArrayOfObjectsToCSV([{ a: 1, b: 2 }], { columnDelimiter: ';' }) // 'a;b\n
 type CsvRow = Record<string, CsvValue>;
 ```
 
-Defined in: [csv.ts:4](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/csv.ts#L4)
+Defined in: [csv.ts:4](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/csv.ts#L4)
 
 ***
 
@@ -69,4 +62,4 @@ Defined in: [csv.ts:4](https://github.com/souljorje/utilities/blob/9dde720731fd4
 type CsvValue = string | number | boolean | null | undefined;
 ```
 
-Defined in: [csv.ts:3](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/csv.ts#L3)
+Defined in: [csv.ts:3](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/csv.ts#L3)

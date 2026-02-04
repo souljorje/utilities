@@ -22,19 +22,19 @@
 ### confirmExternalLinks()
 
 ```ts
-function confirmExternalLinks(confirmationFn): void;
+function confirmExternalLinks(confirmationFn: (link: string) => boolean | Promise<boolean>): void;
 ```
 
-Defined in: [browser.ts:71](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/browser.ts#L71)
+Defined in: [browser.ts:71](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/browser.ts#L71)
 
 Guards external links with a confirmation callback.
 Ignores local links and whitelisted domains.
 
 #### Parameters
 
-##### confirmationFn
-
-(`link`) => `boolean` | `Promise`<`boolean`>
+| Parameter | Type |
+| ------ | ------ |
+| `confirmationFn` | (`link`: `string`) => `boolean` | `Promise`<`boolean`> |
 
 #### Returns
 
@@ -45,18 +45,18 @@ Ignores local links and whitelisted domains.
 ### copyToClipboard()
 
 ```ts
-function copyToClipboard(text): Promise<void>;
+function copyToClipboard(text: string): Promise<void>;
 ```
 
-Defined in: [browser.ts:9](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/browser.ts#L9)
+Defined in: [browser.ts:9](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/browser.ts#L9)
 
 Copies text to the clipboard
 
 #### Parameters
 
-##### text
-
-`string`
+| Parameter | Type |
+| ------ | ------ |
+| `text` | `string` |
 
 #### Returns
 
@@ -67,22 +67,19 @@ Copies text to the clipboard
 ### downloadCSV()
 
 ```ts
-function downloadCSV(data, filename): void;
+function downloadCSV(data: CsvRow[], filename: string): void;
 ```
 
-Defined in: [browser.ts:47](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/browser.ts#L47)
+Defined in: [browser.ts:47](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/browser.ts#L47)
 
 Downloads rows as CSV file.
 
 #### Parameters
 
-##### data
-
-[`CsvRow`](csv.md#csvrow)\[]
-
-##### filename
-
-`string` = `'export'`
+| Parameter | Type | Default value |
+| ------ | ------ | ------ |
+| `data` | [`CsvRow`](csv.md#csvrow)\[] | `undefined` |
+| `filename` | `string` | `'export'` |
 
 #### Returns
 
@@ -99,22 +96,19 @@ downloadCSV([{ a: 1 }]) // starts download
 ### downloadFile()
 
 ```ts
-function downloadFile(data, fileName): void;
+function downloadFile(data: string, fileName: string): void;
 ```
 
-Defined in: [browser.ts:17](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/browser.ts#L17)
+Defined in: [browser.ts:17](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/browser.ts#L17)
 
 Triggers browser file download from URL/blob URL.
 
 #### Parameters
 
-##### data
-
-`string`
-
-##### fileName
-
-`string` = `'download'`
+| Parameter | Type | Default value |
+| ------ | ------ | ------ |
+| `data` | `string` | `undefined` |
+| `fileName` | `string` | `'download'` |
 
 #### Returns
 
@@ -131,22 +125,19 @@ downloadFile('data:text/plain,hello', 'hello.txt') // starts download
 ### downloadJSON()
 
 ```ts
-function downloadJSON(data, fileName): void;
+function downloadJSON(data: unknown, fileName: string): void;
 ```
 
-Defined in: [browser.ts:32](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/browser.ts#L32)
+Defined in: [browser.ts:32](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/browser.ts#L32)
 
 Downloads object/string payload as JSON file.
 
 #### Parameters
 
-##### data
-
-`unknown`
-
-##### fileName
-
-`string` = `'download.json'`
+| Parameter | Type | Default value |
+| ------ | ------ | ------ |
+| `data` | `unknown` | `undefined` |
+| `fileName` | `string` | `'download.json'` |
 
 #### Returns
 
@@ -163,18 +154,18 @@ downloadJSON({ a: 1 }, 'data.json') // starts download
 ### getCSSVariable()
 
 ```ts
-function getCSSVariable(name): string;
+function getCSSVariable(name: string): string;
 ```
 
-Defined in: [browser.ts:150](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/browser.ts#L150)
+Defined in: [browser.ts:150](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/browser.ts#L150)
 
 Reads a CSS variable value from the document root.
 
 #### Parameters
 
-##### name
-
-`string`
+| Parameter | Type |
+| ------ | ------ |
+| `name` | `string` |
 
 #### Returns
 
@@ -191,18 +182,18 @@ getCSSVariable('--color-primary') // '#013370'
 ### getScrollParent()
 
 ```ts
-function getScrollParent(node): Node | null;
+function getScrollParent(node: Node | null): Node | null;
 ```
 
-Defined in: [browser.ts:104](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/browser.ts#L104)
+Defined in: [browser.ts:104](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/browser.ts#L104)
 
 Finds nearest scrollable parent node recursively
 
 #### Parameters
 
-##### node
-
-`Node` | `null`
+| Parameter | Type |
+| ------ | ------ |
+| `node` | `Node` | `null` |
 
 #### Returns
 
@@ -213,18 +204,18 @@ Finds nearest scrollable parent node recursively
 ### hasScroll()
 
 ```ts
-function hasScroll(node): boolean;
+function hasScroll(node: Node): boolean;
 ```
 
-Defined in: [browser.ts:96](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/browser.ts#L96)
+Defined in: [browser.ts:96](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/browser.ts#L96)
 
 Returns true when element node has vertical or horizontal scroll overflow.
 
 #### Parameters
 
-##### node
-
-`Node`
+| Parameter | Type |
+| ------ | ------ |
+| `node` | `Node` |
 
 #### Returns
 
@@ -235,18 +226,18 @@ Returns true when element node has vertical or horizontal scroll overflow.
 ### isInViewport()
 
 ```ts
-function isInViewport(el): boolean;
+function isInViewport(el: HTMLElement): boolean;
 ```
 
-Defined in: [browser.ts:115](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/browser.ts#L115)
+Defined in: [browser.ts:115](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/browser.ts#L115)
 
 Checks whether element is fully visible in viewport
 
 #### Parameters
 
-##### el
-
-`HTMLElement`
+| Parameter | Type |
+| ------ | ------ |
+| `el` | `HTMLElement` |
 
 #### Returns
 
@@ -257,22 +248,19 @@ Checks whether element is fully visible in viewport
 ### isOutsideParentView()
 
 ```ts
-function isOutsideParentView(child, parent): boolean;
+function isOutsideParentView(child: HTMLElement, parent: HTMLElement | null): boolean;
 ```
 
-Defined in: [browser.ts:131](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/browser.ts#L131)
+Defined in: [browser.ts:131](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/browser.ts#L131)
 
 Checks whether child element is outside its parent bounds
 
 #### Parameters
 
-##### child
-
-`HTMLElement`
-
-##### parent
-
-`HTMLElement` | `null`
+| Parameter | Type | Default value |
+| ------ | ------ | ------ |
+| `child` | `HTMLElement` | `undefined` |
+| `parent` | `HTMLElement` | `null` | `child.parentElement` |
 
 #### Returns
 
@@ -283,22 +271,19 @@ Checks whether child element is outside its parent bounds
 ### updateQuery()
 
 ```ts
-function updateQuery(query, value): void;
+function updateQuery(query: string, value: string): void;
 ```
 
-Defined in: [browser.ts:61](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/browser.ts#L61)
+Defined in: [browser.ts:61](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/browser.ts#L61)
 
 Updates query parameter without page reload.
 
 #### Parameters
 
-##### query
-
-`string`
-
-##### value
-
-`string`
+| Parameter | Type |
+| ------ | ------ |
+| `query` | `string` |
+| `value` | `string` |
 
 #### Returns
 

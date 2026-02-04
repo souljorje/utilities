@@ -17,46 +17,40 @@
 
 ```ts
 function debounce<T>(
-   func, 
-   timeout, 
-   immediate): (...args) => void;
+   func: T, 
+   timeout: number, 
+   immediate: boolean): (...args: Parameters<T>) => void;
 ```
 
-Defined in: [misc.ts:31](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/misc.ts#L31)
+Defined in: [misc.ts:31](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/misc.ts#L31)
 
 Delays execution until a timeout passes after the most recent call.
 
 #### Type Parameters
 
-##### T
-
-`T` *extends* (...`args`) => `ReturnType`<`T`>
+| Type Parameter |
+| ------ |
+| `T` *extends* (...`args`: `Parameters`<`T`>) => `ReturnType`<`T`> |
 
 #### Parameters
 
-##### func
-
-`T`
-
-##### timeout
-
-`number` = `300`
-
-##### immediate
-
-`boolean` = `false`
+| Parameter | Type | Default value |
+| ------ | ------ | ------ |
+| `func` | `T` | `undefined` |
+| `timeout` | `number` | `300` |
+| `immediate` | `boolean` | `false` |
 
 #### Returns
 
 ```ts
-(...args): void;
+(...args: Parameters<T>): void;
 ```
 
 ##### Parameters
 
-###### args
-
-...`Parameters`<`T`>
+| Parameter | Type |
+| ------ | ------ |
+| ...`args` | `Parameters`<`T`> |
 
 ##### Returns
 
@@ -74,18 +68,18 @@ fn('a'); fn('b') // logs only 'b'
 ### delay()
 
 ```ts
-function delay(ms): Promise<void>;
+function delay(ms: number): Promise<void>;
 ```
 
-Defined in: [misc.ts:22](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/misc.ts#L22)
+Defined in: [misc.ts:22](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/misc.ts#L22)
 
 Resolves after the provided delay.
 
 #### Parameters
 
-##### ms
-
-`number`
+| Parameter | Type |
+| ------ | ------ |
+| `ms` | `number` |
 
 #### Returns
 
@@ -103,33 +97,27 @@ await delay(0) // resolves on next tick
 ### functionable()
 
 ```ts
-function functionable<T, A>(value, ...args): T;
+function functionable<T, A>(value: T | (...args: A) => T, ...args: A): T;
 ```
 
-Defined in: [misc.ts:11](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/misc.ts#L11)
+Defined in: [misc.ts:11](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/misc.ts#L11)
 
 Resolves value directly, or calls it if it is a function
 with rest parameters as arguments
 
 #### Type Parameters
 
-##### T
-
-`T`
-
-##### A
-
-`A` *extends* `unknown`\[]
+| Type Parameter |
+| ------ |
+| `T` |
+| `A` *extends* `unknown`\[] |
 
 #### Parameters
 
-##### value
-
-`T` | (...`args`) => `T`
-
-##### args
-
-...`A`
+| Parameter | Type |
+| ------ | ------ |
+| `value` | `T` | (...`args`: `A`) => `T` |
+| ...`args` | `A` |
 
 #### Returns
 
@@ -147,24 +135,24 @@ functionable(5) // 5
 ### safeJSONParse()
 
 ```ts
-function safeJSONParse<T>(v): "" | T;
+function safeJSONParse<T>(v: string): "" | T;
 ```
 
-Defined in: [misc.ts:71](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/misc.ts#L71)
+Defined in: [misc.ts:71](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/misc.ts#L71)
 
 Parses JSON and returns an empty string on failure.
 
 #### Type Parameters
 
-##### T
-
-`T`
+| Type Parameter |
+| ------ |
+| `T` |
 
 #### Parameters
 
-##### v
-
-`string`
+| Parameter | Type |
+| ------ | ------ |
+| `v` | `string` |
 
 #### Returns
 
@@ -182,40 +170,37 @@ safeJSONParse('{bad}') // ''
 ### throttle()
 
 ```ts
-function throttle<T>(func, timeout): (...args) => void;
+function throttle<T>(func: T, timeout: number): (...args: Parameters<T>) => void;
 ```
 
-Defined in: [misc.ts:52](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/misc.ts#L52)
+Defined in: [misc.ts:52](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/misc.ts#L52)
 
 Limits execution to at most once per timeout window.
 
 #### Type Parameters
 
-##### T
-
-`T` *extends* (...`args`) => `ReturnType`<`T`>
+| Type Parameter |
+| ------ |
+| `T` *extends* (...`args`: `Parameters`<`T`>) => `ReturnType`<`T`> |
 
 #### Parameters
 
-##### func
-
-`T`
-
-##### timeout
-
-`number` = `300`
+| Parameter | Type | Default value |
+| ------ | ------ | ------ |
+| `func` | `T` | `undefined` |
+| `timeout` | `number` | `300` |
 
 #### Returns
 
 ```ts
-(...args): void;
+(...args: Parameters<T>): void;
 ```
 
 ##### Parameters
 
-###### args
-
-...`Parameters`<`T`>
+| Parameter | Type |
+| ------ | ------ |
+| ...`args` | `Parameters`<`T`> |
 
 ##### Returns
 

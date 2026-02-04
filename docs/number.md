@@ -15,18 +15,18 @@
 ### getDecimalsCount()
 
 ```ts
-function getDecimalsCount(num): number;
+function getDecimalsCount(num: number): number;
 ```
 
-Defined in: [number.ts:26](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/number.ts#L26)
+Defined in: [number.ts:26](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/number.ts#L26)
 
 Returns count of decimal digits in number representation.
 
 #### Parameters
 
-##### num
-
-`number`
+| Parameter | Type |
+| ------ | ------ |
+| `num` | `number` |
 
 #### Returns
 
@@ -44,22 +44,19 @@ getDecimalsCount(10) // 0
 ### getPercentage()
 
 ```ts
-function getPercentage(first, second): number;
+function getPercentage(first: number, second: number): number;
 ```
 
-Defined in: [number.ts:8](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/number.ts#L8)
+Defined in: [number.ts:8](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/number.ts#L8)
 
 Calculates first as a percentage of second.
 
 #### Parameters
 
-##### first
-
-`number`
-
-##### second
-
-`number`
+| Parameter | Type |
+| ------ | ------ |
+| `first` | `number` |
+| `second` | `number` |
 
 #### Returns
 
@@ -77,22 +74,19 @@ getPercentage(1, 4) // 25
 ### getPercentageChange()
 
 ```ts
-function getPercentageChange(from, to): number;
+function getPercentageChange(from: number, to: number): number;
 ```
 
-Defined in: [number.ts:17](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/number.ts#L17)
+Defined in: [number.ts:17](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/number.ts#L17)
 
 Calculates percentage change between two numbers
 
 #### Parameters
 
-##### from
-
-`number`
-
-##### to
-
-`number`
+| Parameter | Type |
+| ------ | ------ |
+| `from` | `number` |
+| `to` | `number` |
 
 #### Returns
 
@@ -110,22 +104,19 @@ getPercentageChange(25, 200) // −87.5
 ### getRandomNumber()
 
 ```ts
-function getRandomNumber(min, max): number;
+function getRandomNumber(min: number, max: number): number;
 ```
 
-Defined in: [number.ts:35](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/number.ts#L35)
+Defined in: [number.ts:35](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/number.ts#L35)
 
 Generates a random integer in the inclusive range \[min, max].
 
 #### Parameters
 
-##### min
-
-`number`
-
-##### max
-
-`number`
+| Parameter | Type |
+| ------ | ------ |
+| `min` | `number` |
+| `max` | `number` |
 
 #### Returns
 

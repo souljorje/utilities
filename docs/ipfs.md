@@ -15,18 +15,18 @@
 ### cidToIpfsUri()
 
 ```ts
-function cidToIpfsUri(v): string;
+function cidToIpfsUri(v: string): string;
 ```
 
-Defined in: [ipfs.ts:31](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/ipfs.ts#L31)
+Defined in: [ipfs.ts:31](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/ipfs.ts#L31)
 
 Builds `ipfs://` URI from CID.
 
 #### Parameters
 
-##### v
-
-`string`
+| Parameter | Type |
+| ------ | ------ |
+| `v` | `string` |
 
 #### Returns
 
@@ -44,18 +44,18 @@ cidToIpfsUri('bafy123') // 'ipfs://bafy123'
 ### ipfsUriToCid()
 
 ```ts
-function ipfsUriToCid(v): string;
+function ipfsUriToCid(v: string): string;
 ```
 
-Defined in: [ipfs.ts:22](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/ipfs.ts#L22)
+Defined in: [ipfs.ts:22](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/ipfs.ts#L22)
 
 Extracts CID from an `ipfs://` URI.
 
 #### Parameters
 
-##### v
-
-`string`
+| Parameter | Type |
+| ------ | ------ |
+| `v` | `string` |
 
 #### Returns
 
@@ -73,22 +73,19 @@ ipfsUriToCid('ipfs://bafy123') // 'bafy123'
 ### ipfsUriToUri()
 
 ```ts
-function ipfsUriToUri(v, gatewayUrl): string;
+function ipfsUriToUri(v: string, gatewayUrl: string): string;
 ```
 
-Defined in: [ipfs.ts:39](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/ipfs.ts#L39)
+Defined in: [ipfs.ts:39](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/ipfs.ts#L39)
 
 Converts `ipfs://` URI to HTTP gateway URL.
 
 #### Parameters
 
-##### v
-
-`string`
-
-##### gatewayUrl
-
-`string`
+| Parameter | Type |
+| ------ | ------ |
+| `v` | `string` |
+| `gatewayUrl` | `string` |
 
 #### Returns
 
@@ -105,18 +102,18 @@ ipfsUriToUri('ipfs://QmHash', 'https://ipfs.io') // 'https://ipfs.io/ipfs/QmHash
 ### isIpfsUri()
 
 ```ts
-function isIpfsUri(v): boolean;
+function isIpfsUri(v: string): boolean;
 ```
 
-Defined in: [ipfs.ts:13](https://github.com/souljorje/utilities/blob/9dde720731fd4c1e3ea7908eb257479d127501e7/src/ipfs.ts#L13)
+Defined in: [ipfs.ts:13](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/ipfs.ts#L13)
 
 Validates IPFS URI format.
 
 #### Parameters
 
-##### v
-
-`string`
+| Parameter | Type |
+| ------ | ------ |
+| `v` | `string` |
 
 #### Returns
 
