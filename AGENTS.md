@@ -27,19 +27,22 @@ Reuse optimized zero-deps real-life typescript utilities across projects.
 ## Don’t
 
 - NEVER use ` in link titles in .md files
+- NEVER change tests coverage threshhold
 
 ## Common Commands (root)
 
 - `bun install`
 - `bun run build`
 - `bun test`
-- `bun run coverage` / `bun run coverage:check`
+- `bun run coverage`
 - `bun run lint` / `bun run lintfix`
 - `bun run validate`
 
 ## Validation & Hooks
 
-- `validate` runs build, tests, and coverage check
+- Coverage, reporter format, and thresholds are configured in `bunfig.toml`
+- Browser-like tests use Happy DOM preload from `happydom.ts` via Bun test config
+- `validate` runs build, tests, and coverage
 - Pre-commit hook runs linting and tests
 - Pre-publish hook runs linting and validate
 

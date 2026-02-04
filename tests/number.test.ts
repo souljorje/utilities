@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'bun:test'
 
-import { getDecimalsCount, getPercentage, getPercentageChange, getRandomNumber, MAX_INT_32 } from '../src/number'
+import { getDecimalsCount, getPercentage, getPercentageChange, getRandomNumber } from '../src/number'
 
 function withMockedRandom<T>(value: number, callback: () => T): T {
   const originalRandom = Math.random
@@ -17,7 +17,6 @@ describe('number', () => {
     expect(getPercentage(25, 200)).toBe(12.5)
     expect(getPercentageChange(200, 25)).toBe(700)
     expect(getDecimalsCount(12.34)).toBe(2)
-    expect(MAX_INT_32).toBe(Number.MAX_SAFE_INTEGER)
   })
 
   it('returns random integer in inclusive bounds', () => {

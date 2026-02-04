@@ -25,8 +25,6 @@ export const getPercentageChange = (from: number, to: number): number => getPerc
  */
 export const getDecimalsCount = (num: number): number => num.toString().split('.')[1]?.length ?? 0
 
-export const MAX_INT_32 = Number.MAX_SAFE_INTEGER
-
 /**
  * Generates a random integer in the inclusive range [min, max].
  *

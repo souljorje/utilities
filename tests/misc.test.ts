@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'bun:test'
 
-import { debounce, functionable, safeJSONParse, throttle } from '../src/misc'
+import { debounce, functionable, safeJSONParse, throttle, delay as waitDelay } from '../src/misc'
 
 function delay(ms: number): Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, ms))
@@ -30,5 +30,9 @@ describe('misc', () => {
 
     expect(debouncedHits).toEqual(['b'])
     expect(throttledHits).toEqual(['x'])
+  })
+
+  it('waits for delay promise', async () => {
+    await expect(waitDelay(1)).resolves.toBeUndefined()
   })
 })

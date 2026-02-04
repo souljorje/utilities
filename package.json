@@ -20,11 +20,10 @@
   "scripts": {
     "build": "rm -rf dist && bun build src/index.ts --outdir dist --format esm --target node && tsc --emitDeclarationOnly --outDir dist",
     "test": "bun test",
-    "coverage": "bun test --coverage --coverage-reporter=text --coverage-reporter=lcov",
-    "coverage:check": "bun run coverage && bun scripts/check-coverage.mjs",
+    "coverage": "bun test --coverage",
     "lint": "eslint .",
     "lintfix": "eslint . --fix",
-    "validate": "bun run build && bun run test && bun run coverage:check",
+    "validate": "bun run build && bun run test && bun run coverage",
     "prepare": "husky",
     "prepublishOnly": "bun run lint && bun run validate"
   },
@@ -33,6 +32,7 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "^7.2.0",
+    "@happy-dom/global-registrator": "^20.5.0",
     "@types/bun": "^1.3.8",
     "eslint": "^9.39.2",
     "husky": "^9.1.7",

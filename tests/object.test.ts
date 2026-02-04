@@ -11,6 +11,8 @@ import {
   groupBy,
   isEmptyObject,
   mapKeysToValues,
+  mapObjectEntries,
+  mapObjectValues,
   mergeObjects,
   toSet,
   uniq,
@@ -41,6 +43,8 @@ describe('object', () => {
     expect(arrayCreateConditionally([true, 'x'], [false, 'y'], 'z')).toEqual(['x', 'z'])
     expect(uniq([1, 1, 2])).toEqual([1, 2])
     expect(uniqBy([{ id: 1 }, { id: 1 }, { id: 2 }], (item) => item.id)).toEqual([{ id: 1 }, { id: 2 }])
+    expect(mapObjectValues({ a: 1, b: 2 }, (key, value) => `${key}:${value}`)).toEqual({ a: 'a:1', b: 'b:2' })
+    expect(mapObjectEntries({ a: 1 }, (key, value) => [key.toUpperCase(), value])).toEqual({ A: 1 })
   })
 
   it('covers nested access, merge and set operations', () => {
