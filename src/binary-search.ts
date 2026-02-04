@@ -1,9 +1,9 @@
 /**
  * Comparator contract used by binary-search helpers.
  */
-export type Comparator<T> = (a: T, b: T) => number;
+export type Comparator<T> = (a: T, b: T) => number
 
-const defaultCompare: Comparator<any> = (a, b) => (a < b ? -1 : a > b ? 1 : 0);
+const defaultCompare: Comparator<any> = (a, b) => (a < b ? -1 : a > b ? 1 : 0)
 
 /**
  * Core first-true binary search over a sorted array.
@@ -16,20 +16,20 @@ const defaultCompare: Comparator<any> = (a, b) => (a < b ? -1 : a > b ? 1 : 0);
  * binarySearchBase([1, 3, 5], (v) => v > 10) // 3
  */
 export function binarySearchBase<T>(array: readonly T[], predicate: (value: T) => boolean): number {
-    let low = 0;
-    let high = array.length;
+  let low = 0
+  let high = array.length
 
-    while (low < high) {
-        const mid = low + Math.floor((high - low) / 2);
+  while (low < high) {
+    const mid = low + Math.floor((high - low) / 2)
 
-        if (predicate(array[mid])) {
-            high = mid;
-        } else {
-            low = mid + 1;
-        }
+    if (predicate(array[mid])) {
+      high = mid
+    } else {
+      low = mid + 1
     }
+  }
 
-    return low;
+  return low
 }
 
 /**
@@ -40,11 +40,11 @@ export function binarySearchBase<T>(array: readonly T[], predicate: (value: T) =
  * lowerBound([1, 2, 2, 4], 3) // 3
  */
 export function lowerBound<T>(
-    array: readonly T[],
-    target: T,
-    compare: Comparator<T> = defaultCompare as Comparator<T>,
+  array: readonly T[],
+  target: T,
+  compare: Comparator<T> = defaultCompare as Comparator<T>,
 ): number {
-    return binarySearchBase(array, (element) => compare(element, target) >= 0);
+  return binarySearchBase(array, (element) => compare(element, target) >= 0)
 }
 
 /**
@@ -55,11 +55,11 @@ export function lowerBound<T>(
  * upperBound([1, 2, 2, 4], 5) // 4
  */
 export function upperBound<T>(
-    array: readonly T[],
-    target: T,
-    compare: Comparator<T> = defaultCompare as Comparator<T>,
+  array: readonly T[],
+  target: T,
+  compare: Comparator<T> = defaultCompare as Comparator<T>,
 ): number {
-    return binarySearchBase(array, (element) => compare(element, target) > 0);
+  return binarySearchBase(array, (element) => compare(element, target) > 0)
 }
 
 /**
@@ -70,17 +70,17 @@ export function upperBound<T>(
  * binarySearch([1, 2, 4], 3) // -1
  */
 export function binarySearch<T>(
-    array: readonly T[],
-    target: T,
-    compare: Comparator<T> = defaultCompare as Comparator<T>,
+  array: readonly T[],
+  target: T,
+  compare: Comparator<T> = defaultCompare as Comparator<T>,
 ): number {
-    const index = lowerBound(array, target, compare);
+  const index = lowerBound(array, target, compare)
 
-    if (index < array.length && compare(array[index], target) === 0) {
-        return index;
-    }
+  if (index < array.length && compare(array[index], target) === 0) {
+    return index
+  }
 
-    return -1;
+  return -1
 }
 
 /**
@@ -91,12 +91,12 @@ export function binarySearch<T>(
  * equalRange([1, 2, 2, 2, 4], 3) // [4, 4]
  */
 export function equalRange<T>(
-    array: readonly T[],
-    target: T,
-    compare: Comparator<T> = defaultCompare as Comparator<T>,
+  array: readonly T[],
+  target: T,
+  compare: Comparator<T> = defaultCompare as Comparator<T>,
 ): [number, number] {
-    return [
-        lowerBound(array, target, compare),
-        upperBound(array, target, compare),
-    ];
+  return [
+    lowerBound(array, target, compare),
+    upperBound(array, target, compare),
+  ]
 }

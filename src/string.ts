@@ -1,4 +1,4 @@
-export const blankValue = '—';
+export const blankValue = '—'
 
 /**
  * Adds plural suffix when count is not singular.
@@ -7,7 +7,7 @@ export const blankValue = '—';
  * pluralize('block', 2) // 'blocks'
  * pluralize('block', 1) // 'block'
  */
-export const pluralize = (word: string, count: number): string => (count === 1 ? word : `${word}s`);
+export const pluralize = (word: string, count: number): string => (count === 1 ? word : `${word}s`)
 
 /**
  * Replaces underscores with spaces.
@@ -16,34 +16,32 @@ export const pluralize = (word: string, count: number): string => (count === 1 ?
  * humanize('hello_world') // 'hello world'
  * humanize('hello') // 'hello'
  */
-export const humanize = (s: string): string => s.replaceAll('_', ' ');
+export const humanize = (s: string): string => s.replaceAll('_', ' ')
 
 /**
  * Uppercases the first character.
  *
  * @example
- * capitalize('tezos') // 'Tezos'
+ * capitalize('foo') // 'Foo'
  * capitalize('') // ''
  */
-export const capitalize = (s: string): string => s.charAt(0).toUpperCase() + s.slice(1);
+export const capitalize = (s: string): string => s.charAt(0).toUpperCase() + s.slice(1)
 
 /**
  * Humanizes and capitalizes a string.
  *
  * @example
  * titleize('hello_world') // 'Hello world'
- * titleize('tzkt') // 'Tzkt'
  */
-export const titleize = (s: string): string => humanize(capitalize(s));
+export const titleize = (s: string): string => humanize(capitalize(s))
 
 /**
  * Creates a random UUID.
  *
  * @example
  * generateId() // '550e8400-e29b-41d4-a716-446655440000'
- * generateId().length // 36
  */
-export const generateId = (): string => crypto.randomUUID();
+export const generateId = (): string => crypto.randomUUID()
 
 /**
  * Keeps start and end segments with ellipsis in the middle.
@@ -52,7 +50,7 @@ export const generateId = (): string => crypto.randomUUID();
  * abbreviateString('abcdefgh', 2, 2) // 'ab...gh'
  * abbreviateString('abcdef', 3, 1) // 'abc...f'
  */
-export const abbreviateString = (v: string, startCount: number, endCount: number): string => `${v.slice(0, startCount)}...${v.slice(-endCount)}`;
+export const abbreviateString = (v: string, startCount: number, endCount: number): string => `${v.slice(0, startCount)}...${v.slice(-endCount)}`
 
 /**
  * Trims and lowercases a string safely.
@@ -61,22 +59,22 @@ export const abbreviateString = (v: string, startCount: number, endCount: number
  * trimToLowercase('  HeLLo ') // 'hello'
  * trimToLowercase(undefined) // undefined
  */
-export const trimToLowercase = (s?: string | null): string | undefined => s?.trim().toLowerCase();
+export const trimToLowercase = (s?: string | null): string | undefined => s?.trim().toLowerCase()
 
 /**
  * Decodes a hex string into UTF-8 text.
  *
  * @example
  * decodeHEX('68656c6c6f') // 'hello'
- * decodeHEX('74657a6f73') // 'tezos'
+ * decodeHEX('74657a6f73') // 'foo'
  */
-export const decodeHEX = (s: string): string => {
-    const parsed = s
-        .replace(/\s+/g, '')
-        .replace(/[0-9a-f]{2}/g, '%$&');
+export function decodeHEX(s: string): string {
+  const parsed = s
+    .replace(/\s+/g, '')
+    .replace(/[0-9a-f]{2}/g, '%$&')
 
-    return decodeURIComponent(parsed);
-};
+  return decodeURIComponent(parsed)
+}
 
 /**
  * Converts snake_case text to camelCase.
@@ -85,12 +83,12 @@ export const decodeHEX = (s: string): string => {
  * snakeCaseToCamelCase('my_token_id') // 'myTokenId'
  * snakeCaseToCamelCase('alreadyCamel') // 'alreadyCamel'
  */
-export const snakeCaseToCamelCase = (s: string): string => {
-    return s.replace(
-        /(_[a-z])/ig,
-        (segment) => segment.toUpperCase().replace('_', ''),
-    );
-};
+export function snakeCaseToCamelCase(s: string): string {
+  return s.replace(
+    /(_[a-z])/gi,
+    (segment) => segment.toUpperCase().replace('_', ''),
+  )
+}
 
 /**
  * Returns fallback text when value is falsy.
@@ -99,4 +97,4 @@ export const snakeCaseToCamelCase = (s: string): string => {
  * emptyable('', 'n/a') // 'n/a'
  * emptyable('ok', 'n/a') // 'ok'
  */
-export const emptyable = <T>(value: T, emptyValue: unknown = blankValue): T | unknown => value || emptyValue;
+export const emptyable = <T>(value: T, emptyValue: unknown = blankValue): T | unknown => value || emptyValue

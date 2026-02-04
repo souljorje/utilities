@@ -2,13 +2,12 @@
 
 ## Goal
 
-Reuse optimized zero-deps real-life utilities across projects.
+Reuse optimized zero-deps real-life typescript utilities across projects.
 
 ## Stack
 
 - Language: TypeScript (ESM)
-- Build: Bun
-- Tests: Bun
+- Build/Test: Bun
 - Package manager: Bun
 
 ## Conventions
@@ -18,6 +17,7 @@ Reuse optimized zero-deps real-life utilities across projects.
 - Prefer functional and declarative programming patterns
 - Keep code framework-agnostic and side-effect-free
 - Prefix boolean props/variables with is, has (e.g., isLoading, hasError)
+- Finished task must surpass `validate` script
 
 ## Do
 
@@ -30,11 +30,18 @@ Reuse optimized zero-deps real-life utilities across projects.
 
 ## Common Commands (root)
 
-- `pnpm install`
-- `pnpm dev`
-- `pnpm build`
-- `pnpm test`
-- `pnpm lint` / `pnpm lintfix`
+- `bun install`
+- `bun run build`
+- `bun test`
+- `bun run coverage` / `bun run coverage:check`
+- `bun run lint` / `bun run lintfix`
+- `bun run validate`
+
+## Validation & Hooks
+
+- `validate` runs build, tests, and coverage check
+- Pre-commit hook runs linting and tests
+- Pre-publish hook runs linting and validate
 
 ## Commit & Pull Request Guidelines
 

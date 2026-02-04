@@ -1,8 +1,8 @@
-import { toSet } from './object';
+import { toSet } from './object'
 
-export const baseUrl = typeof window === 'undefined' ? '' : window.location.origin;
+export const baseUrl = typeof window === 'undefined' ? '' : window.location.origin
 
-const validUrlRegex = /^(http(s)?:\/\/.)(www\.)?[-a-zA-Z0-9@:%._+~#=]{2,256}(\.[a-z]{2,})?\b([-a-zA-Z0-9@:%_+.~#?&//=]*)$/i;
+const hasHttpProtocol = (url: URL): boolean => url.protocol === 'http:' || url.protocol === 'https:'
 
 /**
  * Validates URL string format.
@@ -11,7 +11,13 @@ const validUrlRegex = /^(http(s)?:\/\/.)(www\.)?[-a-zA-Z0-9@:%._+~#=]{2,256}(\.[
  * isValidUrl('https://site.com') // true
  * isValidUrl('/accounts') // false
  */
-export const isValidUrl = (url: string): boolean => validUrlRegex.test(url);
+export function isValidUrl(url: string): boolean {
+  try {
+    return hasHttpProtocol(new URL(url))
+  } catch {
+    return false
+  }
+}
 
 /**
  * Returns true for absolute URLs.
@@ -20,7 +26,7 @@ export const isValidUrl = (url: string): boolean => validUrlRegex.test(url);
  * isAbsoluteUrl('https://site.com') // true
  * isAbsoluteUrl('/account') // false
  */
-export const isAbsoluteUrl = (url: string): boolean => isValidUrl(url);
+export const isAbsoluteUrl = (url: string): boolean => isValidUrl(url)
 
 /**
  * Checks whether URL is local or relative.
@@ -29,9 +35,9 @@ export const isAbsoluteUrl = (url: string): boolean => isValidUrl(url);
  * isLocalUrl('/blocks') // true
  * isLocalUrl('https://example.com') // false
  */
-export const isLocalUrl = (url: string, currentBaseUrl = baseUrl): boolean => (
-    url.startsWith(currentBaseUrl) || !isAbsoluteUrl(url)
-);
+export function isLocalUrl(url: string, currentBaseUrl = baseUrl): boolean {
+  return url.startsWith(currentBaseUrl) || !isAbsoluteUrl(url)
+}
 
 /**
  * Removes base URL prefix from absolute URL.
@@ -40,9 +46,9 @@ export const isLocalUrl = (url: string, currentBaseUrl = baseUrl): boolean => (
  * toRelativeUrl('https://site.com/path', 'https://site.com') // '/path'
  * toRelativeUrl('/path', 'https://site.com') // '/path'
  */
-export const toRelativeUrl = (url: string, currentBaseUrl = baseUrl): string => (
-    url.replace(currentBaseUrl, '')
-);
+export function toRelativeUrl(url: string, currentBaseUrl = baseUrl): string {
+  return url.replace(currentBaseUrl, '')
+}
 
 /**
  * Extracts top-level domain from URL.
@@ -51,16 +57,16 @@ export const toRelativeUrl = (url: string, currentBaseUrl = baseUrl): string => 
  * getDomain('https://api.site.com/v1') // 'site.com'
  * getDomain('https://site.com') // 'site.com'
  */
-export const getDomain = (url: string): string => {
-    const urlInstance = new URL(url);
-    const urlDomains = urlInstance.hostname.split('.');
+export function getDomain(url: string): string {
+  const urlInstance = new URL(url)
+  const urlDomains = urlInstance.hostname.split('.')
 
-    if (urlDomains.length === 2) {
-        return urlInstance.hostname;
-    }
+  if (urlDomains.length === 2) {
+    return urlInstance.hostname
+  }
 
-    return `${urlDomains.at(-2) ?? ''}.${urlDomains.at(-1) ?? ''}`;
-};
+  return `${urlDomains.at(-2) ?? ''}.${urlDomains.at(-1) ?? ''}`
+}
 
 /**
  * Checks whitelist membership by normalized domain.
@@ -69,11 +75,7 @@ export const getDomain = (url: string): string => {
  * isWhitelistedUrl('https://site.com', ['site.com']) // true
  * isWhitelistedUrl('https://evil.io', ['site.com']) // false
  */
-export const isWhitelistedUrl = (
-    url: string,
-    whitelist: Iterable<string> | Set<string> = [],
-    hostname = typeof window === 'undefined' ? '' : window.location.hostname,
-): boolean => {
-    const domain = getDomain(url);
-    return domain === hostname || toSet(whitelist).has(domain);
-};
+export function isWhitelistedUrl(url: string, whitelist: Iterable<string> | Set<string> = [], hostname = typeof window === 'undefined' ? '' : window.location.hostname): boolean {
+  const domain = getDomain(url)
+  return domain === hostname || toSet(whitelist).has(domain)
+}

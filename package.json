@@ -1,0 +1,41 @@
+{
+  "name": "@souljorje/utils",
+  "type": "module",
+  "version": "0.1.0",
+  "description": "Zero-dependency real-life typescript utility functions",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "bun": ">=1.1.0"
+  },
+  "scripts": {
+    "build": "rm -rf dist && bun build src/index.ts --outdir dist --format esm --target node && tsc --emitDeclarationOnly --outDir dist",
+    "test": "bun test",
+    "coverage": "bun test --coverage --coverage-reporter=text --coverage-reporter=lcov",
+    "coverage:check": "bun run coverage && bun scripts/check-coverage.mjs",
+    "lint": "eslint .",
+    "lintfix": "eslint . --fix",
+    "validate": "bun run build && bun run test && bun run coverage:check",
+    "prepare": "husky",
+    "prepublishOnly": "bun run lint && bun run validate"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^7.2.0",
+    "@types/bun": "^1.3.8",
+    "eslint": "^9.39.2",
+    "husky": "^9.1.7",
+    "typescript": "^5.9.3"
+  }
+}

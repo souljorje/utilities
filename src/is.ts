@@ -5,7 +5,7 @@
  * isString('abc') // true
  * isString(42) // false
  */
-export const isString = (v: unknown): v is string => typeof v === 'string';
+export const isString = (v: unknown): v is string => typeof v === 'string'
 
 /**
  * Returns true when the value is a Date instance.
@@ -14,7 +14,7 @@ export const isString = (v: unknown): v is string => typeof v === 'string';
  * isDate(new Date()) // true
  * isDate('abc') // false
  */
-export const isDate = (v: unknown): v is Date => v instanceof Date;
+export const isDate = (v: unknown): v is Date => v instanceof Date
 
 /**
  * Returns true for finite numbers excluding NaN.
@@ -24,7 +24,7 @@ export const isDate = (v: unknown): v is Date => v instanceof Date;
  * isNumber('abc') // false
  * isNumber(Number.NaN) // false
  */
-export const isNumber = (value: unknown): value is number => Number.isFinite(value);
+export const isNumber = (value: unknown): value is number => Number.isFinite(value)
 
 /**
  * Returns true for string or finite number values.
@@ -33,9 +33,9 @@ export const isNumber = (value: unknown): value is number => Number.isFinite(val
  * isStringOrNumber('abc') // true
  * isStringOrNumber({ value: 42 }) // false
  */
-export const isStringOrNumber = (value: unknown): value is string | number => (
-    isString(value) || isNumber(value)
-);
+export function isStringOrNumber(value: unknown): value is string | number {
+  return isString(value) || isNumber(value)
+}
 
 /**
  * Returns true when the value is callable.
@@ -44,9 +44,9 @@ export const isStringOrNumber = (value: unknown): value is string | number => (
  * isFunction(() => 1) // true
  * isFunction('abc') // false
  */
-export const isFunction = <T extends (...args: any[]) => unknown>(v: unknown): v is T => (
-    typeof v === 'function'
-);
+export function isFunction<T extends (...args: any[]) => unknown>(v: unknown): v is T {
+  return typeof v === 'function'
+}
 
 /**
  * Returns true when the value is not undefined.
@@ -55,7 +55,7 @@ export const isFunction = <T extends (...args: any[]) => unknown>(v: unknown): v
  * isDefined(null) && isDefined(false) && isDefined('') // true
  * isDefined(undefined) // false
  */
-export const isDefined = <T>(v: T | undefined): v is T => typeof v !== 'undefined';
+export const isDefined = <T>(v: T | undefined): v is T => typeof v !== 'undefined'
 
 /**
  * Returns true when value is null or undefined.
@@ -64,7 +64,7 @@ export const isDefined = <T>(v: T | undefined): v is T => typeof v !== 'undefine
  * isNullish(null || undefined) // true
  * isNullish('') // false
  */
-export const isNullish = (v: unknown): v is null | undefined => v == null;
+export const isNullish = (v: unknown): v is null | undefined => v == null
 
 /**
  * Returns true only for plain object literals.
@@ -73,11 +73,11 @@ export const isNullish = (v: unknown): v is null | undefined => v == null;
  * isPlainObject({ a: 1 }) // true
  * isPlainObject([]) // false
  */
-export const isPlainObject = (v: unknown): v is Record<string, unknown> => {
-    if (Object.prototype.toString.call(v) !== '[object Object]') return false;
-    const prototype = Object.getPrototypeOf(v);
-    return prototype === null || prototype === Object.prototype;
-};
+export function isPlainObject(v: unknown): v is Record<string, unknown> {
+  if (Object.prototype.toString.call(v) !== '[object Object]') return false
+  const prototype = Object.getPrototypeOf(v)
+  return prototype === null || prototype === Object.prototype
+}
 
 /**
  * Returns true when value is a Set.
@@ -86,7 +86,7 @@ export const isPlainObject = (v: unknown): v is Record<string, unknown> => {
  * isSet(new Set([1])) // true
  * isSet([1]) // false
  */
-export const isSet = (v: unknown): v is Set<unknown> => (v instanceof Set);
+export const isSet = (v: unknown): v is Set<unknown> => (v instanceof Set)
 
 /**
  * Returns true when value is a Map.
@@ -95,4 +95,4 @@ export const isSet = (v: unknown): v is Set<unknown> => (v instanceof Set);
  * isMap(new Map()) // true
  * isMap({}) // false
  */
-export const isMap = (v: unknown): v is Map<unknown, unknown> => v instanceof Map;
+export const isMap = (v: unknown): v is Map<unknown, unknown> => v instanceof Map
