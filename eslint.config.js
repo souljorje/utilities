@@ -3,6 +3,9 @@ import antfu from '@antfu/eslint-config'
 export default antfu({
   type: 'lib',
   typescript: true,
+  ignores: [
+    'docs/**/*.md',
+  ],
 })
   .overrideRules({
     'style/operator-linebreak': ['error', 'before', { overrides: { '=': 'after' } }],

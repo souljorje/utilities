@@ -1,0 +1,13 @@
+{
+  "$schema": "https://typedoc-plugin-markdown.org/schema.json",
+  "plugin": ["typedoc-plugin-markdown"],
+  "includeVersion": true,
+  "entryPoints": ["src"],
+  "entryPointStrategy": "expand",
+  "exclude": ["src/index.ts"],
+  "out": "docs",
+  "entryFileName": "index",
+  "flattenOutputFiles": false,
+  "readme": "none",
+  "groupOrder": ["Functions", "Variables", "*"]
+}

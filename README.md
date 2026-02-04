@@ -31,6 +31,8 @@ const relative = getDateDiff(Date.now() - 30_000, { short: true }) // 30 sec ago
 const unique = uniq([1, 1, 2, 3]) // [1, 2, 3]
 ```
 
+Read [docs](./docs/index.md) for more details.
+
 ## Development
 
 ```bash

@@ -35,6 +35,7 @@ Reuse optimized zero-deps real-life typescript utilities across projects.
 - `bun run build`
 - `bun test`
 - `bun run coverage`
+- `bun run docs`
 - `bun run lint` / `bun run lintfix`
 - `bun run validate`
 
@@ -42,9 +43,7 @@ Reuse optimized zero-deps real-life typescript utilities across projects.
 
 - Coverage, reporter format, and thresholds are configured in `bunfig.toml`
 - Browser-like tests use Happy DOM preload from `happydom.ts` via Bun test config
-- `validate` runs build, tests, and coverage
-- Pre-commit hook runs linting and tests
-- Pre-publish hook runs linting and validate
+- Documentation uses nested folders in `/docs` for navigation (e.g. `/docs/guides`, `/docs/api`)
 
 ## Commit & Pull Request Guidelines
 

@@ -3,13 +3,17 @@ import { describe, expect, it } from 'bun:test'
 import {
   arrayAddConditionally,
   arrayCreateConditionally,
+  binarySearch,
+  binarySearchBase,
   ensureArray,
+  equalRange,
   findByPropertyValue,
   getAllCombinations,
   getPropByPath,
   getWeightedRandomItem,
   groupBy,
   isEmptyObject,
+  lowerBound,
   mapKeysToValues,
   mapObjectEntries,
   mapObjectValues,
@@ -17,6 +21,7 @@ import {
   toSet,
   uniq,
   uniqBy,
+  upperBound,
 } from '../src/object'
 
 function withMockedRandom<T>(value: number, callback: () => T): T {
@@ -62,5 +67,21 @@ describe('object', () => {
       { id: 1, weight: 1 },
       { id: 2, weight: 3 },
     ]))).toEqual({ id: 1, weight: 1 })
+  })
+})
+
+describe('binary-search', () => {
+  const values = [1, 2, 2, 4, 9]
+
+  it('resolves bounds and exact search', () => {
+    expect(lowerBound(values, 2)).toBe(1)
+    expect(upperBound(values, 2)).toBe(3)
+    expect(binarySearch(values, 4)).toBe(3)
+    expect(binarySearch(values, 5)).toBe(-1)
+  })
+
+  it('supports generic first true and equal range', () => {
+    expect(binarySearchBase(values, (value) => value >= 4)).toBe(3)
+    expect(equalRange(values, 2)).toEqual([1, 3])
   })
 })

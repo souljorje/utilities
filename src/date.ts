@@ -1,17 +1,17 @@
 import { isPlainObject } from './is'
 import { pluralize } from './string'
 
-type DateInput = Date | number
-type TimeUnitName = 'year' | 'month' | 'week' | 'day' | 'hour' | 'minute' | 'second'
-type TimeStructure = Partial<Record<TimeUnitName, number>>
+export type DateInput = Date | number
+export type TimeUnitName = 'year' | 'month' | 'week' | 'day' | 'hour' | 'minute' | 'second'
+export type TimeStructure = Partial<Record<TimeUnitName, number>>
 
-interface DateToStringOptions {
+export interface DateToStringOptions {
   short?: boolean
   displayToday?: boolean
   displayYear?: boolean
 }
 
-interface DateDiffOptions {
+export interface DateDiffOptions {
   units?: TimeUnitName[]
   unitsCount?: number
   short?: boolean

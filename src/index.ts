@@ -1,4 +1,3 @@
-export * from './binary-search'
 export * from './browser'
 export * from './colors'
 export * from './csv'

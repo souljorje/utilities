@@ -1,4 +1,6 @@
-import { isPlainObject, isSet } from './is'
+import { isPlainObject, isSet } from '../is'
+
+export * from './binary-search'
 
 /**
  * Returns true when object has no enumerable keys.
