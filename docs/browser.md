@@ -25,7 +25,7 @@
 function confirmExternalLinks(confirmationFn: (link: string) => boolean | Promise<boolean>): void;
 ```
 
-Defined in: [browser.ts:71](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/browser.ts#L71)
+Defined in: [browser.ts:71](https://github.com/souljorje/utilities/blob/5127f543787eb962535c0d7b8597eaa0719901c4/src/browser.ts#L71)
 
 Guards external links with a confirmation callback.
 Ignores local links and whitelisted domains.
@@ -48,7 +48,7 @@ Ignores local links and whitelisted domains.
 function copyToClipboard(text: string): Promise<void>;
 ```
 
-Defined in: [browser.ts:9](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/browser.ts#L9)
+Defined in: [browser.ts:9](https://github.com/souljorje/utilities/blob/5127f543787eb962535c0d7b8597eaa0719901c4/src/browser.ts#L9)
 
 Copies text to the clipboard
 
@@ -70,7 +70,7 @@ Copies text to the clipboard
 function downloadCSV(data: CsvRow[], filename: string): void;
 ```
 
-Defined in: [browser.ts:47](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/browser.ts#L47)
+Defined in: [browser.ts:47](https://github.com/souljorje/utilities/blob/5127f543787eb962535c0d7b8597eaa0719901c4/src/browser.ts#L47)
 
 Downloads rows as CSV file.
 
@@ -99,7 +99,7 @@ downloadCSV([{ a: 1 }]) // starts download
 function downloadFile(data: string, fileName: string): void;
 ```
 
-Defined in: [browser.ts:17](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/browser.ts#L17)
+Defined in: [browser.ts:17](https://github.com/souljorje/utilities/blob/5127f543787eb962535c0d7b8597eaa0719901c4/src/browser.ts#L17)
 
 Triggers browser file download from URL/blob URL.
 
@@ -128,7 +128,7 @@ downloadFile('data:text/plain,hello', 'hello.txt') // starts download
 function downloadJSON(data: unknown, fileName: string): void;
 ```
 
-Defined in: [browser.ts:32](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/browser.ts#L32)
+Defined in: [browser.ts:32](https://github.com/souljorje/utilities/blob/5127f543787eb962535c0d7b8597eaa0719901c4/src/browser.ts#L32)
 
 Downloads object/string payload as JSON file.
 
@@ -157,7 +157,7 @@ downloadJSON({ a: 1 }, 'data.json') // starts download
 function getCSSVariable(name: string): string;
 ```
 
-Defined in: [browser.ts:150](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/browser.ts#L150)
+Defined in: [browser.ts:150](https://github.com/souljorje/utilities/blob/5127f543787eb962535c0d7b8597eaa0719901c4/src/browser.ts#L150)
 
 Reads a CSS variable value from the document root.
 
@@ -185,7 +185,7 @@ getCSSVariable('--color-primary') // '#013370'
 function getScrollParent(node: Node | null): Node | null;
 ```
 
-Defined in: [browser.ts:104](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/browser.ts#L104)
+Defined in: [browser.ts:104](https://github.com/souljorje/utilities/blob/5127f543787eb962535c0d7b8597eaa0719901c4/src/browser.ts#L104)
 
 Finds nearest scrollable parent node recursively
 
@@ -207,7 +207,7 @@ Finds nearest scrollable parent node recursively
 function hasScroll(node: Node): boolean;
 ```
 
-Defined in: [browser.ts:96](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/browser.ts#L96)
+Defined in: [browser.ts:96](https://github.com/souljorje/utilities/blob/5127f543787eb962535c0d7b8597eaa0719901c4/src/browser.ts#L96)
 
 Returns true when element node has vertical or horizontal scroll overflow.
 
@@ -229,7 +229,7 @@ Returns true when element node has vertical or horizontal scroll overflow.
 function isInViewport(el: HTMLElement): boolean;
 ```
 
-Defined in: [browser.ts:115](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/browser.ts#L115)
+Defined in: [browser.ts:115](https://github.com/souljorje/utilities/blob/5127f543787eb962535c0d7b8597eaa0719901c4/src/browser.ts#L115)
 
 Checks whether element is fully visible in viewport
 
@@ -251,7 +251,7 @@ Checks whether element is fully visible in viewport
 function isOutsideParentView(child: HTMLElement, parent: HTMLElement | null): boolean;
 ```
 
-Defined in: [browser.ts:131](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/browser.ts#L131)
+Defined in: [browser.ts:131](https://github.com/souljorje/utilities/blob/5127f543787eb962535c0d7b8597eaa0719901c4/src/browser.ts#L131)
 
 Checks whether child element is outside its parent bounds
 
@@ -274,7 +274,7 @@ Checks whether child element is outside its parent bounds
 function updateQuery(query: string, value: string): void;
 ```
 
-Defined in: [browser.ts:61](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/browser.ts#L61)
+Defined in: [browser.ts:61](https://github.com/souljorje/utilities/blob/5127f543787eb962535c0d7b8597eaa0719901c4/src/browser.ts#L61)
 
 Updates query parameter without page reload.
 

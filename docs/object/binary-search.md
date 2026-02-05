@@ -24,7 +24,7 @@ function binarySearch<T>(
    compare: Comparator<T>): number;
 ```
 
-Defined in: [object/binary-search.ts:72](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/object/binary-search.ts#L72)
+Defined in: [object/binary-search.ts:72](https://github.com/souljorje/utilities/blob/5127f543787eb962535c0d7b8597eaa0719901c4/src/object/binary-search.ts#L72)
 
 Returns exact-match index for target, or -1 when absent.
 
@@ -61,7 +61,7 @@ binarySearch([1, 2, 4], 3) // -1
 function binarySearchBase<T>(array: readonly T[], predicate: (value: T) => boolean): number;
 ```
 
-Defined in: [object/binary-search.ts:18](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/object/binary-search.ts#L18)
+Defined in: [object/binary-search.ts:18](https://github.com/souljorje/utilities/blob/5127f543787eb962535c0d7b8597eaa0719901c4/src/object/binary-search.ts#L18)
 
 Core first-true binary search over a sorted array.
 
@@ -103,7 +103,7 @@ function equalRange<T>(
    compare: Comparator<T>): [number, number];
 ```
 
-Defined in: [object/binary-search.ts:93](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/object/binary-search.ts#L93)
+Defined in: [object/binary-search.ts:93](https://github.com/souljorje/utilities/blob/5127f543787eb962535c0d7b8597eaa0719901c4/src/object/binary-search.ts#L93)
 
 Returns `[firstIndex, pastLastIndex]` range for all equal elements.
 
@@ -143,7 +143,7 @@ function lowerBound<T>(
    compare: Comparator<T>): number;
 ```
 
-Defined in: [object/binary-search.ts:42](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/object/binary-search.ts#L42)
+Defined in: [object/binary-search.ts:42](https://github.com/souljorje/utilities/blob/5127f543787eb962535c0d7b8597eaa0719901c4/src/object/binary-search.ts#L42)
 
 Returns first index where `array[index] >= target`.
 
@@ -183,7 +183,7 @@ function upperBound<T>(
    compare: Comparator<T>): number;
 ```
 
-Defined in: [object/binary-search.ts:57](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/object/binary-search.ts#L57)
+Defined in: [object/binary-search.ts:57](https://github.com/souljorje/utilities/blob/5127f543787eb962535c0d7b8597eaa0719901c4/src/object/binary-search.ts#L57)
 
 Returns first index where `array[index] > target`.
 
@@ -220,7 +220,7 @@ upperBound([1, 2, 2, 4], 5) // 4
 type Comparator<T> = (a: T, b: T) => number;
 ```
 
-Defined in: [object/binary-search.ts:4](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/object/binary-search.ts#L4)
+Defined in: [object/binary-search.ts:4](https://github.com/souljorje/utilities/blob/5127f543787eb962535c0d7b8597eaa0719901c4/src/object/binary-search.ts#L4)
 
 Comparator contract used by binary-search helpers.
 

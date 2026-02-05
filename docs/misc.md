@@ -22,7 +22,7 @@ function debounce<T>(
    immediate: boolean): (...args: Parameters<T>) => void;
 ```
 
-Defined in: [misc.ts:31](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/misc.ts#L31)
+Defined in: [misc.ts:31](https://github.com/souljorje/utilities/blob/5127f543787eb962535c0d7b8597eaa0719901c4/src/misc.ts#L31)
 
 Delays execution until a timeout passes after the most recent call.
 
@@ -71,7 +71,7 @@ fn('a'); fn('b') // logs only 'b'
 function delay(ms: number): Promise<void>;
 ```
 
-Defined in: [misc.ts:22](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/misc.ts#L22)
+Defined in: [misc.ts:22](https://github.com/souljorje/utilities/blob/5127f543787eb962535c0d7b8597eaa0719901c4/src/misc.ts#L22)
 
 Resolves after the provided delay.
 
@@ -100,7 +100,7 @@ await delay(0) // resolves on next tick
 function functionable<T, A>(value: T | (...args: A) => T, ...args: A): T;
 ```
 
-Defined in: [misc.ts:11](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/misc.ts#L11)
+Defined in: [misc.ts:11](https://github.com/souljorje/utilities/blob/5127f543787eb962535c0d7b8597eaa0719901c4/src/misc.ts#L11)
 
 Resolves value directly, or calls it if it is a function
 with rest parameters as arguments
@@ -138,7 +138,7 @@ functionable(5) // 5
 function safeJSONParse<T>(v: string): "" | T;
 ```
 
-Defined in: [misc.ts:71](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/misc.ts#L71)
+Defined in: [misc.ts:71](https://github.com/souljorje/utilities/blob/5127f543787eb962535c0d7b8597eaa0719901c4/src/misc.ts#L71)
 
 Parses JSON and returns an empty string on failure.
 
@@ -173,7 +173,7 @@ safeJSONParse('{bad}') // ''
 function throttle<T>(func: T, timeout: number): (...args: Parameters<T>) => void;
 ```
 
-Defined in: [misc.ts:52](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/misc.ts#L52)
+Defined in: [misc.ts:52](https://github.com/souljorje/utilities/blob/5127f543787eb962535c0d7b8597eaa0719901c4/src/misc.ts#L52)
 
 Limits execution to at most once per timeout window.
 

@@ -18,7 +18,7 @@
 function cidToIpfsUri(v: string): string;
 ```
 
-Defined in: [ipfs.ts:31](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/ipfs.ts#L31)
+Defined in: [ipfs.ts:31](https://github.com/souljorje/utilities/blob/5127f543787eb962535c0d7b8597eaa0719901c4/src/ipfs.ts#L31)
 
 Builds `ipfs://` URI from CID.
 
@@ -47,7 +47,7 @@ cidToIpfsUri('bafy123') // 'ipfs://bafy123'
 function ipfsUriToCid(v: string): string;
 ```
 
-Defined in: [ipfs.ts:22](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/ipfs.ts#L22)
+Defined in: [ipfs.ts:22](https://github.com/souljorje/utilities/blob/5127f543787eb962535c0d7b8597eaa0719901c4/src/ipfs.ts#L22)
 
 Extracts CID from an `ipfs://` URI.
 
@@ -76,7 +76,7 @@ ipfsUriToCid('ipfs://bafy123') // 'bafy123'
 function ipfsUriToUri(v: string, gatewayUrl: string): string;
 ```
 
-Defined in: [ipfs.ts:39](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/ipfs.ts#L39)
+Defined in: [ipfs.ts:39](https://github.com/souljorje/utilities/blob/5127f543787eb962535c0d7b8597eaa0719901c4/src/ipfs.ts#L39)
 
 Converts `ipfs://` URI to HTTP gateway URL.
 
@@ -105,7 +105,7 @@ ipfsUriToUri('ipfs://QmHash', 'https://ipfs.io') // 'https://ipfs.io/ipfs/QmHash
 function isIpfsUri(v: string): boolean;
 ```
 
-Defined in: [ipfs.ts:13](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/ipfs.ts#L13)
+Defined in: [ipfs.ts:13](https://github.com/souljorje/utilities/blob/5127f543787eb962535c0d7b8597eaa0719901c4/src/ipfs.ts#L13)
 
 Validates IPFS URI format.
 

@@ -22,7 +22,7 @@
 function getDomain(url: string): string;
 ```
 
-Defined in: [url.ts:60](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/url.ts#L60)
+Defined in: [url.ts:60](https://github.com/souljorje/utilities/blob/5127f543787eb962535c0d7b8597eaa0719901c4/src/url.ts#L60)
 
 Extracts top-level domain from URL.
 
@@ -51,7 +51,7 @@ getDomain('https://site.com') // 'site.com'
 function isAbsoluteUrl(url: string): boolean;
 ```
 
-Defined in: [url.ts:29](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/url.ts#L29)
+Defined in: [url.ts:29](https://github.com/souljorje/utilities/blob/5127f543787eb962535c0d7b8597eaa0719901c4/src/url.ts#L29)
 
 Returns true for absolute URLs.
 
@@ -80,7 +80,7 @@ isAbsoluteUrl('/account') // false
 function isLocalUrl(url: string, currentBaseUrl: string): boolean;
 ```
 
-Defined in: [url.ts:38](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/url.ts#L38)
+Defined in: [url.ts:38](https://github.com/souljorje/utilities/blob/5127f543787eb962535c0d7b8597eaa0719901c4/src/url.ts#L38)
 
 Checks whether URL is local or relative.
 
@@ -110,7 +110,7 @@ isLocalUrl('https://example.com') // false
 function isValidUrl(url: string): boolean;
 ```
 
-Defined in: [url.ts:14](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/url.ts#L14)
+Defined in: [url.ts:14](https://github.com/souljorje/utilities/blob/5127f543787eb962535c0d7b8597eaa0719901c4/src/url.ts#L14)
 
 Validates URL string format.
 
@@ -142,7 +142,7 @@ function isWhitelistedUrl(
    hostname: string): boolean;
 ```
 
-Defined in: [url.ts:78](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/url.ts#L78)
+Defined in: [url.ts:78](https://github.com/souljorje/utilities/blob/5127f543787eb962535c0d7b8597eaa0719901c4/src/url.ts#L78)
 
 Checks whitelist membership by normalized domain.
 
@@ -173,7 +173,7 @@ isWhitelistedUrl('https://evil.io', ['site.com']) // false
 function toRelativeUrl(url: string, currentBaseUrl: string): string;
 ```
 
-Defined in: [url.ts:49](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/url.ts#L49)
+Defined in: [url.ts:49](https://github.com/souljorje/utilities/blob/5127f543787eb962535c0d7b8597eaa0719901c4/src/url.ts#L49)
 
 Removes base URL prefix from absolute URL.
 
@@ -203,4 +203,4 @@ toRelativeUrl('/path', 'https://site.com') // '/path'
 const baseUrl: string;
 ```
 
-Defined in: [url.ts:3](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/url.ts#L3)
+Defined in: [url.ts:3](https://github.com/souljorje/utilities/blob/5127f543787eb962535c0d7b8597eaa0719901c4/src/url.ts#L3)

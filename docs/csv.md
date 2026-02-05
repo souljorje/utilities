@@ -18,7 +18,7 @@
 function convertArrayOfObjectsToCSV(data: CsvRow[] | null | undefined, __namedParameters: object): string | null;
 ```
 
-Defined in: [csv.ts:15](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/csv.ts#L15)
+Defined in: [csv.ts:15](https://github.com/souljorje/utilities/blob/5127f543787eb962535c0d7b8597eaa0719901c4/src/csv.ts#L15)
 
 Converts object rows into CSV text.
 
@@ -52,7 +52,7 @@ convertArrayOfObjectsToCSV([{ a: 1, b: 2 }], { columnDelimiter: ';' }) // 'a;b\n
 type CsvRow = Record<string, CsvValue>;
 ```
 
-Defined in: [csv.ts:4](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/csv.ts#L4)
+Defined in: [csv.ts:4](https://github.com/souljorje/utilities/blob/5127f543787eb962535c0d7b8597eaa0719901c4/src/csv.ts#L4)
 
 ***
 
@@ -62,4 +62,4 @@ Defined in: [csv.ts:4](https://github.com/souljorje/utilities/blob/169988197b779
 type CsvValue = string | number | boolean | null | undefined;
 ```
 
-Defined in: [csv.ts:3](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/csv.ts#L3)
+Defined in: [csv.ts:3](https://github.com/souljorje/utilities/blob/5127f543787eb962535c0d7b8597eaa0719901c4/src/csv.ts#L3)

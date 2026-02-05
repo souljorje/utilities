@@ -29,7 +29,7 @@ function abbreviateString(
    endCount: number): string;
 ```
 
-Defined in: [string.ts:53](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/string.ts#L53)
+Defined in: [string.ts:53](https://github.com/souljorje/utilities/blob/5127f543787eb962535c0d7b8597eaa0719901c4/src/string.ts#L53)
 
 Keeps start and end segments with ellipsis in the middle.
 
@@ -60,7 +60,7 @@ abbreviateString('abcdef', 3, 1) // 'abc...f'
 function capitalize(s: string): string;
 ```
 
-Defined in: [string.ts:28](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/string.ts#L28)
+Defined in: [string.ts:28](https://github.com/souljorje/utilities/blob/5127f543787eb962535c0d7b8597eaa0719901c4/src/string.ts#L28)
 
 Uppercases the first character.
 
@@ -89,7 +89,7 @@ capitalize('') // ''
 function decodeHEX(s: string): string;
 ```
 
-Defined in: [string.ts:71](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/string.ts#L71)
+Defined in: [string.ts:71](https://github.com/souljorje/utilities/blob/5127f543787eb962535c0d7b8597eaa0719901c4/src/string.ts#L71)
 
 Decodes a hex string into UTF-8 text.
 
@@ -118,7 +118,7 @@ decodeHEX('74657a6f73') // 'foo'
 function emptyable<T>(value: T, emptyValue: unknown): unknown;
 ```
 
-Defined in: [string.ts:100](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/string.ts#L100)
+Defined in: [string.ts:100](https://github.com/souljorje/utilities/blob/5127f543787eb962535c0d7b8597eaa0719901c4/src/string.ts#L100)
 
 Returns fallback text when value is falsy.
 
@@ -154,7 +154,7 @@ emptyable('ok', 'n/a') // 'ok'
 function generateId(): string;
 ```
 
-Defined in: [string.ts:44](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/string.ts#L44)
+Defined in: [string.ts:44](https://github.com/souljorje/utilities/blob/5127f543787eb962535c0d7b8597eaa0719901c4/src/string.ts#L44)
 
 Creates a random UUID.
 
@@ -176,7 +176,7 @@ generateId() // '550e8400-e29b-41d4-a716-446655440000'
 function humanize(s: string): string;
 ```
 
-Defined in: [string.ts:19](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/string.ts#L19)
+Defined in: [string.ts:19](https://github.com/souljorje/utilities/blob/5127f543787eb962535c0d7b8597eaa0719901c4/src/string.ts#L19)
 
 Replaces underscores with spaces.
 
@@ -205,7 +205,7 @@ humanize('hello') // 'hello'
 function pluralize(word: string, count: number): string;
 ```
 
-Defined in: [string.ts:10](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/string.ts#L10)
+Defined in: [string.ts:10](https://github.com/souljorje/utilities/blob/5127f543787eb962535c0d7b8597eaa0719901c4/src/string.ts#L10)
 
 Adds plural suffix when count is not singular.
 
@@ -235,7 +235,7 @@ pluralize('block', 1) // 'block'
 function snakeCaseToCamelCase(s: string): string;
 ```
 
-Defined in: [string.ts:86](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/string.ts#L86)
+Defined in: [string.ts:86](https://github.com/souljorje/utilities/blob/5127f543787eb962535c0d7b8597eaa0719901c4/src/string.ts#L86)
 
 Converts snake\_case text to camelCase.
 
@@ -264,7 +264,7 @@ snakeCaseToCamelCase('alreadyCamel') // 'alreadyCamel'
 function titleize(s: string): string;
 ```
 
-Defined in: [string.ts:36](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/string.ts#L36)
+Defined in: [string.ts:36](https://github.com/souljorje/utilities/blob/5127f543787eb962535c0d7b8597eaa0719901c4/src/string.ts#L36)
 
 Humanizes and capitalizes a string.
 
@@ -292,7 +292,7 @@ titleize('hello_world') // 'Hello world'
 function trimToLowercase(s?: string | null): string | undefined;
 ```
 
-Defined in: [string.ts:62](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/string.ts#L62)
+Defined in: [string.ts:62](https://github.com/souljorje/utilities/blob/5127f543787eb962535c0d7b8597eaa0719901c4/src/string.ts#L62)
 
 Trims and lowercases a string safely.
 
@@ -321,4 +321,4 @@ trimToLowercase(undefined) // undefined
 const blankValue: "—" = '—';
 ```
 
-Defined in: [string.ts:1](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/string.ts#L1)
+Defined in: [string.ts:1](https://github.com/souljorje/utilities/blob/5127f543787eb962535c0d7b8597eaa0719901c4/src/string.ts#L1)

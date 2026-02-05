@@ -15,7 +15,7 @@
 function hex2rgba(hex: string, alpha: number): string;
 ```
 
-Defined in: [colors.ts:7](https://github.com/souljorje/utilities/blob/169988197b77930f2b27fa9b6ee38613b7569ed4/src/colors.ts#L7)
+Defined in: [colors.ts:7](https://github.com/souljorje/utilities/blob/5127f543787eb962535c0d7b8597eaa0719901c4/src/colors.ts#L7)
 
 Converts hex color code to rgba string.
 
