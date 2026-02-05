@@ -24,7 +24,7 @@
     "docs": "typedoc --options typedoc.json",
     "lint": "eslint .",
     "lintfix": "eslint . --fix",
-    "validate": "bun run build && bun run test && bun run coverage",
+    "validate": "bun run lint && bun run build && bun run test",
     "prepare": "husky",
     "prepublishOnly": "bun run lint && bun run validate"
   },
